@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "StoryCollectionViewCell.h"
+#import "DisplayViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *storyCollectionView;
+
+
+@property (nonatomic) NSArray <UIImage *> * tempPictureArray;
 
 @end
 
@@ -17,8 +24,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //WINTER IS COMING!
+    
+ //   __weak ViewController *welf = self;
+    
+    self.tempPictureArray = @[[UIImage imageNamed:@"creeper.jpg"],
+                                  [UIImage imageNamed:@"chairs.jpg"],
+                                  [UIImage imageNamed:@"femaleface.jpg"],
+                                  [UIImage imageNamed:@"jellyfish.jpg"],
+                                  [UIImage imageNamed:@"maleface.jpg"],
+                                  [UIImage imageNamed:@"metric1.jpg"],
+                                  [UIImage imageNamed:@"metric2.jpg"],
+                                  [UIImage imageNamed:@"metric3.jpg"],
+                                  [UIImage imageNamed:@"portrait.jpg"],
+                                  [UIImage imageNamed:@"tree.jpg"]];
+    
+    self.storyCollectionView.dataSource = self;
+    self.storyCollectionView.delegate = self;
+    
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.tempPictureArray.count;
+}
+
+- (StoryCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    StoryCollectionViewCell * cell = [self.storyCollectionView dequeueReusableCellWithReuseIdentifier:@"myCell" forIndexPath:indexPath];
+    cell.storyImageView.image = self.tempPictureArray[indexPath.row];
+    return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    DisplayViewController
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

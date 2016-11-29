@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (nonatomic) NSArray * stickerCollection;
 @property (strong, nonatomic) UIImageView * currentSticker;
-@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *newStickerTapGesture;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *stickerTapGesture;
 
 @end
 

@@ -290,6 +290,7 @@
                     <connections>
                         <outlet property="collectionView" destination="3UR-gy-8H6" id="fwX-Aj-dxn"/>
                         <outlet property="newStickerTapGesture" destination="feQ-s3-vXd" id="8wn-uM-3PN"/>
+                        <outlet property="stickerTapGesture" destination="feQ-s3-vXd" id="520-OT-sT8"/>
                         <outlet property="tabBar" destination="MgJ-3g-0ou" id="4y5-or-alb"/>
                     </connections>
                 </viewController>

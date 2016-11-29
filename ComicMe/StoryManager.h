@@ -13,12 +13,13 @@
 #import "Layer+CoreDataClass.h"
 #import "AppDelegate.h"
 
-@interface StoryManager : NSObject {
-    NSMutableArray * stories;
-}
+@interface StoryManager : NSObject {NSMutableArray * stories;}
 
+@property (nonatomic) NSManagedObjectContext * context;
 @property (nonatomic, retain) NSMutableArray <Story *> * stories;
 
 + (id) sharedManager;
+- (Story *) createNewStory;
+- (Layer *) createNewLayer;
 
 @end

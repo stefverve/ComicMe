@@ -12,10 +12,14 @@
 @interface CanvasViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewBarButton;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraRollButton;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *stickerPanGesture;
+
+
+@property (weak, nonatomic) StoryManager * sm;
 
 @end
 
@@ -27,6 +31,7 @@
         self.navigationItem.rightBarButtonItems = @[self.navigationItem.rightBarButtonItem];
         self.hidePreviewButton = NO;
     }
+    self.sm = [StoryManager sharedManager];
 }
 
 - (void)didReceiveMemoryWarning {

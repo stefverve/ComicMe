@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "StoryManager.h"
 
 @interface AppDelegate ()
+
 
 @end
 
@@ -16,8 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    // Override point for customization after application launch.
+    StoryManager * sm = [StoryManager sharedManager];
+    sm.context = self.persistentContainer.viewContext;
     return YES;
 }
 

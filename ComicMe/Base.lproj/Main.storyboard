@@ -70,7 +70,7 @@
                     <navigationItem key="navigationItem" id="ov3-sj-gQ7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4IS-fR-wji">
                             <connections>
-                                <segue destination="d81-L9-T9S" kind="show" id="53t-hG-Cpy"/>
+                                <segue destination="d81-L9-T9S" kind="show" identifier="addStory" id="53t-hG-Cpy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -225,6 +225,8 @@
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AfL-O6-k0w"/>
                         <viewControllerLayoutGuide type="bottom" id="QUu-1L-Kww"/>
+<!--                        <viewControllerLayoutGuide type="top" id="2Sv-p8-jJb"/>
+                        <viewControllerLayoutGuide type="bottom" id="RdN-Mu-Wfh"/>   -->
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zLn-8S-fFg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>

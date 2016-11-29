@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import "StoryCollectionViewCell.h"
 #import "DisplayViewController.h"
+#import "CanvasViewController.h"
 
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *storyCollectionView;
+@property (weak, nonatomic) IBOutlet StoryManager * sm;
 
 
 @property (nonatomic) NSArray <UIImage *> * tempPictureArray;
@@ -24,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //WINTER IS COMING!
+    self.sm = [StoryManager sharedManager];
     
  //   __weak ViewController *welf = self;
     
@@ -64,6 +66,10 @@
     if ([segue.identifier isEqualToString:@"detailView"]) {
         DisplayViewController * dVC = segue.destinationViewController;
         dVC.displayImage = sender.storyImageView.image;
+    }
+    if ([segue.identifier isEqualToString:@"addStory"]) {
+        CanvasViewController * cvc = segue.destinationViewController;
+        cvc.currentStory = [self.sm createNewStory];
     }
 }
 

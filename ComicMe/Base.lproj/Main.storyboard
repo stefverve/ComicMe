@@ -70,7 +70,7 @@
                     <navigationItem key="navigationItem" id="ov3-sj-gQ7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4IS-fR-wji">
                             <connections>
-                                <segue destination="d81-L9-T9S" kind="show" id="53t-hG-Cpy"/>
+                                <segue destination="d81-L9-T9S" kind="show" identifier="addStory" id="53t-hG-Cpy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -198,6 +198,10 @@
         <scene sceneID="VLE-om-Tds">
             <objects>
                 <viewController id="PdY-yi-3Ju" customClass="PalletViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Sv-p8-jJb"/>
+                        <viewControllerLayoutGuide type="bottom" id="RdN-Mu-Wfh"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zLn-8S-fFg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +293,7 @@
         <image name="sigh.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="53t-hG-Cpy"/>
         <segue reference="Fov-E3-Qox"/>
-        <segue reference="OC3-li-77y"/>
     </inferredMetricsTieBreakers>
 </document>

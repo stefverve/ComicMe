@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 
+@class  Story;
+
 @interface CanvasViewController : ViewController
 
 @property (nonatomic) BOOL hidePreviewButton;
+@property (nonatomic) Story * currentStory;
 
 @end

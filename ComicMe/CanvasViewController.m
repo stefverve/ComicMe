@@ -36,30 +36,30 @@
     }
 }
 
-#pragma mark - Photo and camera stuff
-- (IBAction)selectPhoto:(UIButton *)sender {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    
-    [self presentViewController:picker animated:YES completion:NULL];
-}
-- (IBAction)takePhoto:(UIButton *)sender {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-    [self presentViewController:picker animated:YES completion:NULL];
-}
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo {
-    self.imageView.image = image;
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-}
+//#pragma mark - Photo and camera stuff
+//- (IBAction)selectPhoto:(UIButton *)sender {
+//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+//    picker.delegate = self;
+//    picker.allowsEditing = YES;
+//    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    
+//    [self presentViewController:picker animated:YES completion:NULL];
+//}
+//- (IBAction)takePhoto:(UIButton *)sender {
+//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+//    picker.delegate = self;
+//    picker.allowsEditing = YES;
+//    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    
+//    [self presentViewController:picker animated:YES completion:NULL];
+//}
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo {
+//    self.imageView.image = image;
+//    [picker dismissViewControllerAnimated:YES completion:NULL];
+//}
+//
+//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+//    [picker dismissViewControllerAnimated:YES completion:NULL];
+//}
 
 @end

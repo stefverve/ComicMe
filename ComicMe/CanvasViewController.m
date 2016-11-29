@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraRollButton;
-@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *stickerPanGesture;
+@property (strong, nonatomic) UIImageView * currentImage;
 
 
 @property (weak, nonatomic) StoryManager * sm;
@@ -32,6 +32,20 @@
         self.hidePreviewButton = NO;
     }
     self.sm = [StoryManager sharedManager];
+    UIPinchGestureRecognizer *pinchy = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerPinch:)];
+    [self.view addGestureRecognizer:pinchy];
+    
+}
+
+- (void) stickerPinch:(UIPinchGestureRecognizer*)sender {
+    
+    self.currentImage.frame = CGRectMake(self.currentImage.frame.origin.x, self.currentImage.frame.origin.y, 300*sender.scale, 300*sender.scale);
+    
+    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
+    self.currentImage.center = [sender locationInView:self.imageView];
+    [UIView commitAnimations];
+    
+    //CGRectMake(self.currentImage.center.x, self.currentImage.center.y, 300*sender.scale, 300*sender.scale);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,9 +62,20 @@
     }
 }
 
-- (IBAction)stickerMovement:(UIPanGestureRecognizer *)sender {
+
+
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *aTouch = [touches anyObject];
+
+    CGPoint location = [aTouch locationInView:self.imageView];
     
+    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
+    self.currentImage.center = location;
+    [UIView commitAnimations];
 }
+
+
+
 
 - (void) addStickerView:(UIImage *)sticker {
     
@@ -60,6 +85,7 @@
     
     [self.imageView addSubview:newImage];
     [newImage setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
+    self.currentImage = newImage;
 }
 
 #pragma mark - Photo and camera stuff

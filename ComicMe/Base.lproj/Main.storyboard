@@ -118,6 +118,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJA-Bk-Ruv">
                                 <rect key="frame" x="0.0" y="64" width="414" height="414"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IJA-Bk-Ruv" secondAttribute="height" id="I0J-zp-krM"/>
                                 </constraints>
@@ -149,15 +150,9 @@
                         <outlet property="cameraRollButton" destination="wcN-KJ-KWV" id="vVN-fR-Ngd"/>
                         <outlet property="imageView" destination="IJA-Bk-Ruv" id="TaY-jJ-TVN"/>
                         <outlet property="previewBarButton" destination="B0J-zG-u3c" id="U2b-BT-4AO"/>
-                        <outlet property="stickerPanGesture" destination="iaI-3d-mRR" id="qgh-bI-opA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9PI-BP-AdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="iaI-3d-mRR">
-                    <connections>
-                        <action selector="stickerMovement:" destination="d81-L9-T9S" id="ubs-em-Bky"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1993" y="-45"/>
         </scene>
@@ -225,8 +220,6 @@
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AfL-O6-k0w"/>
                         <viewControllerLayoutGuide type="bottom" id="QUu-1L-Kww"/>
-<!--                        <viewControllerLayoutGuide type="top" id="2Sv-p8-jJb"/>
-                        <viewControllerLayoutGuide type="bottom" id="RdN-Mu-Wfh"/>   -->
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zLn-8S-fFg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>

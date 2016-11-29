@@ -95,6 +95,17 @@
 			name = Canvas;
 			sourceTree = "<group>";
 		};
+		1D57F52D1DEDF211008CE38A /* Main Collection */ = {
+			isa = PBXGroup;
+			children = (
+				E24E3C621DECA3DF00EAA982 /* ViewController.h */,
+				E24E3C631DECA3DF00EAA982 /* ViewController.m */,
+				E24E3C7B1DECBEA300EAA982 /* StoryCollectionViewCell.h */,
+				E24E3C7C1DECBEA400EAA982 /* StoryCollectionViewCell.m */,
+			);
+			name = "Main Collection";
+			sourceTree = "<group>";
+		};
 		E24E3C501DECA3DF00EAA982 = {
 			isa = PBXGroup;
 			children = (
@@ -114,13 +125,10 @@
 		E24E3C5B1DECA3DF00EAA982 /* ComicMe */ = {
 			isa = PBXGroup;
 			children = (
+				1D57F52D1DEDF211008CE38A /* Main Collection */,
 				1D57F4D31DED3284008CE38A /* Canvas */,
 				E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */,
 				E24E3C601DECA3DF00EAA982 /* AppDelegate.m */,
-				E24E3C621DECA3DF00EAA982 /* ViewController.h */,
-				E24E3C631DECA3DF00EAA982 /* ViewController.m */,
-				E24E3C7B1DECBEA300EAA982 /* StoryCollectionViewCell.h */,
-				E24E3C7C1DECBEA400EAA982 /* StoryCollectionViewCell.m */,
 				E24E3C951DECE23900EAA982 /* StoryManager.h */,
 				E24E3C961DECE23900EAA982 /* StoryManager.m */,
 				E24E3C921DECC79A00EAA982 /* DisplayViewController.h */,

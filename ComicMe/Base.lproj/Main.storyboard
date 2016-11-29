@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ioA-Py-6pN">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-yg-MNo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJ2-8r-Dx0">
                                     <size key="itemSize" width="181" height="159"/>
@@ -85,24 +85,39 @@
         <!--Canvas View Controller-->
         <scene sceneID="EXV-DF-X35">
             <objects>
-                <viewController id="d81-L9-T9S" customClass="CanvasViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="canvasView" id="d81-L9-T9S" customClass="CanvasViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XNq-cb-4Fd"/>
                         <viewControllerLayoutGuide type="bottom" id="8ns-sU-gcT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EcX-Fc-dZr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-Jd-NHw">
-                                <rect key="frame" x="0.0" y="375" width="375" height="292"/>
+                                <rect key="frame" x="0.0" y="478" width="414" height="258"/>
                                 <connections>
-                                    <segue destination="PdY-yi-3Ju" kind="embed" id="blh-4e-m1J"/>
+                                    <segue destination="PdY-yi-3Ju" kind="embed" identifier="palletView" id="blh-4e-m1J"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvZ-un-B2C">
+                                <rect key="frame" x="122" y="125" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Use Camera"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="d81-L9-T9S" eventType="touchUpInside" id="oSq-lg-fyb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcN-KJ-KWV">
+                                <rect key="frame" x="90" y="191" width="194" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Get image from camera roll"/>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="d81-L9-T9S" eventType="touchUpInside" id="uNo-8M-5mG"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJA-Bk-Ruv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IJA-Bk-Ruv" secondAttribute="height" id="I0J-zp-krM"/>
                                 </constraints>
@@ -110,11 +125,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IJA-Bk-Ruv" firstAttribute="top" secondItem="EcX-Fc-dZr" secondAttribute="top" id="78d-VX-fBm"/>
                             <constraint firstItem="8ns-sU-gcT" firstAttribute="top" secondItem="JD3-Jd-NHw" secondAttribute="bottom" id="EB6-8R-MhA"/>
                             <constraint firstItem="IJA-Bk-Ruv" firstAttribute="width" secondItem="EcX-Fc-dZr" secondAttribute="width" id="P4Z-qX-L6P"/>
                             <constraint firstItem="IJA-Bk-Ruv" firstAttribute="centerX" secondItem="EcX-Fc-dZr" secondAttribute="centerX" id="UIH-RI-3o5"/>
                             <constraint firstAttribute="trailing" secondItem="JD3-Jd-NHw" secondAttribute="trailing" id="eWT-fx-0oh"/>
+                            <constraint firstItem="IJA-Bk-Ruv" firstAttribute="top" secondItem="XNq-cb-4Fd" secondAttribute="bottom" id="lXZ-YZ-f39"/>
                             <constraint firstItem="JD3-Jd-NHw" firstAttribute="top" secondItem="IJA-Bk-Ruv" secondAttribute="bottom" id="ylr-bS-GKw"/>
                             <constraint firstItem="JD3-Jd-NHw" firstAttribute="leading" secondItem="EcX-Fc-dZr" secondAttribute="leading" id="zeh-mM-2wu"/>
                         </constraints>
@@ -130,8 +145,11 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="cameraButton" destination="PvZ-un-B2C" id="Vdn-lj-sEi"/>
+                        <outlet property="cameraRollButton" destination="wcN-KJ-KWV" id="vVN-fR-Ngd"/>
+                        <outlet property="imageView" destination="IJA-Bk-Ruv" id="TaY-jJ-TVN"/>
                         <outlet property="previewBarButton" destination="B0J-zG-u3c" id="U2b-BT-4AO"/>
-                        <outlet property="stickerPanGesture" destination="iaI-3d-mRR" id="PzH-iQ-2bj"/>
+                        <outlet property="stickerPanGesture" destination="iaI-3d-mRR" id="qgh-bI-opA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9PI-BP-AdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,7 +159,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2028" y="-35"/>
+            <point key="canvasLocation" x="1993" y="-45"/>
         </scene>
         <!--Display View Controller-->
         <scene sceneID="HrK-45-eFQ">
@@ -152,11 +170,11 @@
                         <viewControllerLayoutGuide type="bottom" id="FcH-Yd-wpP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YMJ-xr-9Zy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgV-u1-ace">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdF-bd-Vo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108" y="815"/>
+            <point key="canvasLocation" x="1879" y="872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Maf-Q9-gxT">
@@ -209,14 +227,14 @@
                         <viewControllerLayoutGuide type="bottom" id="QUu-1L-Kww"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zLn-8S-fFg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbg-jt-RMc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="243"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3UR-gy-8H6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="243"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
                                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9ep-26-iYO">
                                             <size key="itemSize" width="127" height="127"/>
@@ -264,9 +282,8 @@
                                     <constraint firstAttribute="bottom" secondItem="3UR-gy-8H6" secondAttribute="bottom" id="tna-BR-Ker"/>
                                 </constraints>
                             </view>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgJ-3g-0ou">
-                                <rect key="frame" x="0.0" y="243" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <tabBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgJ-3g-0ou">
+                                <rect key="frame" x="0.0" y="209" width="414" height="49"/>
                                 <items>
                                     <tabBarItem title="Stamps" id="03C-TV-UnE"/>
                                     <tabBarItem title="Brush" id="kDD-Dw-z5A"/>
@@ -289,19 +306,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="3UR-gy-8H6" id="fwX-Aj-dxn"/>
-                        <outlet property="newStickerTapGesture" destination="feQ-s3-vXd" id="8wn-uM-3PN"/>
-                        <outlet property="stickerTapGesture" destination="feQ-s3-vXd" id="520-OT-sT8"/>
                         <outlet property="tabBar" destination="MgJ-3g-0ou" id="4y5-or-alb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2o-dn-KT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="feQ-s3-vXd">
-                    <connections>
-                        <action selector="newStickerTapped:" destination="PdY-yi-3Ju" id="qkK-kj-0WY"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2806" y="133"/>
+            <point key="canvasLocation" x="2828" y="122"/>
         </scene>
     </scenes>
     <resources>

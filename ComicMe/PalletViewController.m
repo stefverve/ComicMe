@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (nonatomic) NSArray * stickerCollection;
 @property (strong, nonatomic) UIImageView * currentSticker;
-@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *stickerTapGesture;
 
 @end
 
@@ -28,6 +27,9 @@
     
     self.stickerCollection = [[NSFileManager defaultManager]
                                     contentsOfDirectoryAtPath:folderPath error:&error];
+    
+    self.collectionView.contentInset = UIEdgeInsetsMake(-60, 0, 0, 0);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,8 +58,16 @@
     return 0; // This is the minimum inter item spacing, can be more
 }
 
-- (IBAction)newStickerTapped:(UITapGestureRecognizer *)sender {
-    
+//- (IBAction)newStickerTapped:(UITapGestureRecognizer *)sender {
+//    
+//    NSIndexPath * indexPath = [self.collectionView indexPathForItemAtPoint:[sender locationInView:self.collectionView]];
+//    StampCollectionViewCell *cell = (StampCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+//    [self.delegate addStickerView:cell.imageView.image];
+//}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    StampCollectionViewCell *cell = (StampCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+        [self.delegate addStickerView:cell.imageView.image];
 }
 
 

@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PalletViewController;
+
+@protocol PalletViewDelegate <NSObject>
+
+- (void) addStickerView:(UIImage *)sticker;
+
+@end
 
 @interface PalletViewController : UIViewController
+
+@property (weak, nonatomic) id<PalletViewDelegate> delegate;
 
 @end

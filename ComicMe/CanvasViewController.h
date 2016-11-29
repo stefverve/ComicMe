@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "PalletViewController.h"
 
-@interface CanvasViewController : ViewController
+@interface CanvasViewController : ViewController <PalletViewDelegate>
 
 @property (nonatomic) BOOL hidePreviewButton;
+
+- (void) addStickerView:(UIImage *)sticker;
 
 @end

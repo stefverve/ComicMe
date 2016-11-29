@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D57F4D21DED31F6008CE38A /* PalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D57F4D11DED31F6008CE38A /* PalletViewController.m */; };
+		1D57F4D61DED3572008CE38A /* StampCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */; };
+		1D57F5041DED3E35008CE38A /* stickers in Resources */ = {isa = PBXBuildFile; fileRef = 1D57F5031DED3E35008CE38A /* stickers */; };
 		E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C5D1DECA3DF00EAA982 /* main.m */; };
 		E24E3C611DECA3DF00EAA982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C601DECA3DF00EAA982 /* AppDelegate.m */; };
 		E24E3C641DECA3DF00EAA982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C631DECA3DF00EAA982 /* ViewController.m */; };
@@ -31,6 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D57F4D01DED31F6008CE38A /* PalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PalletViewController.h; sourceTree = "<group>"; };
+		1D57F4D11DED31F6008CE38A /* PalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PalletViewController.m; sourceTree = "<group>"; };
+		1D57F4D41DED3572008CE38A /* StampCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampCollectionViewCell.h; sourceTree = "<group>"; };
+		1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampCollectionViewCell.m; sourceTree = "<group>"; };
+		1D57F5031DED3E35008CE38A /* stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = stickers; sourceTree = "<group>"; };
 		E24E3C591DECA3DF00EAA982 /* ComicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24E3C5D1DECA3DF00EAA982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D57F4D31DED3284008CE38A /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				1D57F5031DED3E35008CE38A /* stickers */,
+				E24E3C981DECFDF100EAA982 /* CanvasViewController.h */,
+				E24E3C991DECFDF100EAA982 /* CanvasViewController.m */,
+				1D57F4D01DED31F6008CE38A /* PalletViewController.h */,
+				1D57F4D11DED31F6008CE38A /* PalletViewController.m */,
+				1D57F4D41DED3572008CE38A /* StampCollectionViewCell.h */,
+				1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */,
+			);
+			name = Canvas;
+			sourceTree = "<group>";
+		};
 		E24E3C501DECA3DF00EAA982 = {
 			isa = PBXGroup;
 			children = (
@@ -92,14 +114,13 @@
 		E24E3C5B1DECA3DF00EAA982 /* ComicMe */ = {
 			isa = PBXGroup;
 			children = (
+				1D57F4D31DED3284008CE38A /* Canvas */,
 				E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */,
 				E24E3C601DECA3DF00EAA982 /* AppDelegate.m */,
 				E24E3C621DECA3DF00EAA982 /* ViewController.h */,
 				E24E3C631DECA3DF00EAA982 /* ViewController.m */,
 				E24E3C7B1DECBEA300EAA982 /* StoryCollectionViewCell.h */,
 				E24E3C7C1DECBEA400EAA982 /* StoryCollectionViewCell.m */,
-				E24E3C981DECFDF100EAA982 /* CanvasViewController.h */,
-				E24E3C991DECFDF100EAA982 /* CanvasViewController.m */,
 				E24E3C951DECE23900EAA982 /* StoryManager.h */,
 				E24E3C961DECE23900EAA982 /* StoryManager.m */,
 				E24E3C921DECC79A00EAA982 /* DisplayViewController.h */,
@@ -202,6 +223,7 @@
 				E24E3C901DECC40500EAA982 /* portrait.jpg in Resources */,
 				E24E3C871DECC3EF00EAA982 /* jellyfish.jpg in Resources */,
 				E24E3C8E1DECC40500EAA982 /* metric2.jpg in Resources */,
+				1D57F5041DED3E35008CE38A /* stickers in Resources */,
 				E24E3C841DECC3EF00EAA982 /* chairs.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D57F4D21DED31F6008CE38A /* PalletViewController.m in Sources */,
 				E24E3C7D1DECBEA400EAA982 /* StoryCollectionViewCell.m in Sources */,
 				E24E3C941DECC79A00EAA982 /* DisplayViewController.m in Sources */,
 				E24E3C641DECA3DF00EAA982 /* ViewController.m in Sources */,
@@ -220,6 +243,7 @@
 				E24E3C9A1DECFDF100EAA982 /* CanvasViewController.m in Sources */,
 				E24E3C611DECA3DF00EAA982 /* AppDelegate.m in Sources */,
 				E24E3C971DECE23900EAA982 /* StoryManager.m in Sources */,
+				1D57F4D61DED3572008CE38A /* StampCollectionViewCell.m in Sources */,
 				E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

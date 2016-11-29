@@ -20,5 +20,6 @@
 
 + (id) sharedManager;
 - (Story *) createNewStory;
+- (Layer *) createNewLayer;
 
 @end

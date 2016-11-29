@@ -12,7 +12,7 @@
 @interface CanvasViewController () 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewBarButton;
-
+@property (weak, nonatomic) StoryManager * sm;
 @end
 
 @implementation CanvasViewController
@@ -23,6 +23,7 @@
         self.navigationItem.rightBarButtonItems = @[self.navigationItem.rightBarButtonItem];
         self.hidePreviewButton = NO;
     }
+    self.sm = [StoryManager sharedManager];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,30 +37,8 @@
     }
 }
 
-//#pragma mark - Photo and camera stuff
-//- (IBAction)selectPhoto:(UIButton *)sender {
-//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//    picker.delegate = self;
-//    picker.allowsEditing = YES;
-//    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//    
-//    [self presentViewController:picker animated:YES completion:NULL];
-//}
-//- (IBAction)takePhoto:(UIButton *)sender {
-//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//    picker.delegate = self;
-//    picker.allowsEditing = YES;
-//    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    
-//    [self presentViewController:picker animated:YES completion:NULL];
-//}
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo {
-//    self.imageView.image = image;
-//    [picker dismissViewControllerAnimated:YES completion:NULL];
-//}
-//
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-//    [picker dismissViewControllerAnimated:YES completion:NULL];
-//}
+- (IBAction)drawbutton:(UIButton *)sender {
+   Layer * currentLayer = [self.sm createNewLayer];
+}
 
 @end

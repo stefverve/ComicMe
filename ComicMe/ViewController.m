@@ -10,6 +10,7 @@
 #import "StoryCollectionViewCell.h"
 #import "DisplayViewController.h"
 
+
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *storyCollectionView;
@@ -26,6 +27,8 @@
     //WINTER IS COMING!
     
  //   __weak ViewController *welf = self;
+    
+    
     
     self.tempPictureArray = @[[UIImage imageNamed:@"creeper.jpg"],
                                   [UIImage imageNamed:@"chairs.jpg"],
@@ -57,8 +60,11 @@
     return cell;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    DisplayViewController
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(StoryCollectionViewCell *)sender {
+    if ([segue.identifier isEqualToString:@"detailView"]) {
+        DisplayViewController * dVC = segue.destinationViewController;
+        dVC.displayImage = sender.storyImageView.image;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -26,6 +26,8 @@
 		E24E3C901DECC40500EAA982 /* portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E24E3C8C1DECC40500EAA982 /* portrait.jpg */; };
 		E24E3C911DECC40500EAA982 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E24E3C8D1DECC40500EAA982 /* tree.jpg */; };
 		E24E3C941DECC79A00EAA982 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C931DECC79A00EAA982 /* DisplayViewController.m */; };
+		E24E3C971DECE23900EAA982 /* StoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C961DECE23900EAA982 /* StoryManager.m */; };
+		E24E3C9A1DECFDF100EAA982 /* CanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C991DECFDF100EAA982 /* CanvasViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,10 @@
 		E24E3C8D1DECC40500EAA982 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree.jpg; sourceTree = "<group>"; };
 		E24E3C921DECC79A00EAA982 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		E24E3C931DECC79A00EAA982 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		E24E3C951DECE23900EAA982 /* StoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryManager.h; sourceTree = "<group>"; };
+		E24E3C961DECE23900EAA982 /* StoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryManager.m; sourceTree = "<group>"; };
+		E24E3C981DECFDF100EAA982 /* CanvasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasViewController.h; sourceTree = "<group>"; };
+		E24E3C991DECFDF100EAA982 /* CanvasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,10 @@
 				E24E3C631DECA3DF00EAA982 /* ViewController.m */,
 				E24E3C7B1DECBEA300EAA982 /* StoryCollectionViewCell.h */,
 				E24E3C7C1DECBEA400EAA982 /* StoryCollectionViewCell.m */,
+				E24E3C981DECFDF100EAA982 /* CanvasViewController.h */,
+				E24E3C991DECFDF100EAA982 /* CanvasViewController.m */,
+				E24E3C951DECE23900EAA982 /* StoryManager.h */,
+				E24E3C961DECE23900EAA982 /* StoryManager.m */,
 				E24E3C921DECC79A00EAA982 /* DisplayViewController.h */,
 				E24E3C931DECC79A00EAA982 /* DisplayViewController.m */,
 				E24E3C651DECA3DF00EAA982 /* Main.storyboard */,
@@ -207,7 +217,9 @@
 				E24E3C941DECC79A00EAA982 /* DisplayViewController.m in Sources */,
 				E24E3C641DECA3DF00EAA982 /* ViewController.m in Sources */,
 				E24E3C6A1DECA3DF00EAA982 /* ComicMe.xcdatamodeld in Sources */,
+				E24E3C9A1DECFDF100EAA982 /* CanvasViewController.m in Sources */,
 				E24E3C611DECA3DF00EAA982 /* AppDelegate.m in Sources */,
+				E24E3C971DECE23900EAA982 /* StoryManager.m in Sources */,
 				E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

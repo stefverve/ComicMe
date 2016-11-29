@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +52,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="storyImageView" destination="W8C-gH-jRw" id="lp9-Ip-mEd"/>
-                                            <segue destination="FMd-2z-C6F" kind="show" id="C5m-jt-p5F"/>
+                                            <segue destination="FMd-2z-C6F" kind="show" identifier="detailView" id="C5m-jt-p5F"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -68,7 +69,7 @@
                     <navigationItem key="navigationItem" id="ov3-sj-gQ7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4IS-fR-wji">
                             <connections>
-                                <segue destination="d81-L9-T9S" kind="show" id="ZXy-vu-vLX"/>
+                                <segue destination="d81-L9-T9S" kind="show" id="53t-hG-Cpy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--Canvas View Controller-->
         <scene sceneID="EXV-DF-X35">
             <objects>
-                <viewController id="d81-L9-T9S" sceneMemberID="viewController">
+                <viewController id="d81-L9-T9S" customClass="CanvasViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XNq-cb-4Fd"/>
                         <viewControllerLayoutGuide type="bottom" id="8ns-sU-gcT"/>
@@ -93,10 +94,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CDs-C5-dYa">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" id="pgd-kO-rfp"/>
+                            <barButtonItem title="Preview" id="B0J-zG-u3c">
+                                <connections>
+                                    <segue destination="FMd-2z-C6F" kind="show" identifier="preview" id="Fov-E3-Qox"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="previewBarButton" destination="B0J-zG-u3c" id="U2b-BT-4AO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9PI-BP-AdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2274" y="-132"/>
+            <point key="canvasLocation" x="2108" y="-90"/>
         </scene>
         <!--Display View Controller-->
         <scene sceneID="HrK-45-eFQ">
@@ -110,7 +124,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgV-u1-ace">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgV-u1-ace">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                         </subviews>
@@ -122,13 +136,20 @@
                             <constraint firstAttribute="trailing" secondItem="KgV-u1-ace" secondAttribute="trailing" id="e3b-9N-L7e"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OoZ-KM-aRF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="3Li-bl-mxE">
+                            <connections>
+                                <segue destination="d81-L9-T9S" kind="show" identifier="edit" id="OC3-li-77y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="displayViewImageView" destination="KgV-u1-ace" id="Ofb-Mb-Cy7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdF-bd-Vo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2273" y="662"/>
+            <point key="canvasLocation" x="2108" y="815"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Maf-Q9-gxT">
@@ -149,4 +170,8 @@
             <point key="canvasLocation" x="92" y="123"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fov-E3-Qox"/>
+        <segue reference="OC3-li-77y"/>
+    </inferredMetricsTieBreakers>
 </document>

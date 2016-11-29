@@ -11,5 +11,6 @@
 @interface DisplayViewController : ViewController
 
 @property (nonatomic) UIImage * displayImage;
+@property (nonatomic) BOOL hideEditButton;
 
 @end

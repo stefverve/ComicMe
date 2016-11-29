@@ -10,7 +10,6 @@
 
 @interface StoryCollectionViewCell ()
 
-
 @end
 
 @implementation StoryCollectionViewCell

@@ -9,7 +9,7 @@
 #import "CanvasViewController.h"
 #import "DisplayViewController.h"
 
-@interface CanvasViewController ()
+@interface CanvasViewController () 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewBarButton;
 

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StoryManager.h"
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) StoryManager * sM;
 
 @end
 

@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StoryManager : NSObject
+#import "Story+CoreDataClass.h"
+#import "Image+CoreDataClass.h"
+#import "Layer+CoreDataClass.h"
+#import "AppDelegate.h"
+
+@interface StoryManager : NSObject {
+    NSMutableArray * stories;
+}
+
+@property (nonatomic, retain) NSMutableArray <Story *> * stories;
+
++ (id) sharedManager;
 
 @end

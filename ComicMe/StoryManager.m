@@ -63,11 +63,11 @@
     self.currentLayer = [[Layer alloc] initWithEntity:layerEntity insertIntoManagedObjectContext:self.context];
     NSMutableSet *layers = [self.currentImage valueForKey:@"layers"];
     [layers addObject:self.currentLayer];
-    self.currentLayer.x = 2;
-    self.currentLayer.y = 3;
-    self.currentLayer.width = 4;
-    self.currentLayer.height = 5;
-    [self saveCoreData];
+//    self.currentLayer.x = 2;
+//    self.currentLayer.y = 3;
+//    self.currentLayer.width = 4;
+//    self.currentLayer.height = 5;
+//    [self saveCoreData];
 
     return self.currentLayer;
 }

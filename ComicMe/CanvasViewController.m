@@ -37,8 +37,4 @@
     }
 }
 
-- (IBAction)drawbutton:(UIButton *)sender {
-   Layer * currentLayer = [self.sm createNewLayer];
-}
-
 @end

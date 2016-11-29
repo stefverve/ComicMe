@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ioA-Py-6pN">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ioA-Py-6pN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -94,6 +94,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-Jd-NHw">
+                                <rect key="frame" x="0.0" y="375" width="375" height="292"/>
+                                <connections>
+                                    <segue destination="PdY-yi-3Ju" kind="embed" id="blh-4e-m1J"/>
+                                </connections>
+                            </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJA-Bk-Ruv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -101,12 +107,6 @@
                                     <constraint firstAttribute="width" secondItem="IJA-Bk-Ruv" secondAttribute="height" id="I0J-zp-krM"/>
                                 </constraints>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-Jd-NHw">
-                                <rect key="frame" x="0.0" y="375" width="375" height="292"/>
-                                <connections>
-                                    <segue destination="PdY-yi-3Ju" kind="embed" id="blh-4e-m1J"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -131,9 +131,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="previewBarButton" destination="B0J-zG-u3c" id="U2b-BT-4AO"/>
+                        <outlet property="stickerPanGesture" destination="iaI-3d-mRR" id="PzH-iQ-2bj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9PI-BP-AdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="iaI-3d-mRR">
+                    <connections>
+                        <action selector="stickerMovement:" destination="d81-L9-T9S" id="ubs-em-Bky"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2028" y="-35"/>
         </scene>
@@ -198,6 +204,10 @@
         <scene sceneID="VLE-om-Tds">
             <objects>
                 <viewController id="PdY-yi-3Ju" customClass="PalletViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AfL-O6-k0w"/>
+                        <viewControllerLayoutGuide type="bottom" id="QUu-1L-Kww"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zLn-8S-fFg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,6 +237,7 @@
                                                         </imageView>
                                                     </subviews>
                                                 </view>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="7Hr-uP-pAY" secondAttribute="bottom" id="FTy-py-gva"/>
                                                     <constraint firstAttribute="trailing" secondItem="7Hr-uP-pAY" secondAttribute="trailing" id="Vb9-UJ-xLb"/>
@@ -245,6 +256,7 @@
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3UR-gy-8H6" secondAttribute="trailing" id="84D-X8-Bec"/>
                                     <constraint firstItem="3UR-gy-8H6" firstAttribute="top" secondItem="Dbg-jt-RMc" secondAttribute="top" id="Dn3-TY-3Rd"/>
@@ -277,10 +289,16 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="3UR-gy-8H6" id="fwX-Aj-dxn"/>
+                        <outlet property="newStickerTapGesture" destination="feQ-s3-vXd" id="8wn-uM-3PN"/>
                         <outlet property="tabBar" destination="MgJ-3g-0ou" id="4y5-or-alb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2o-dn-KT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="feQ-s3-vXd">
+                    <connections>
+                        <action selector="newStickerTapped:" destination="PdY-yi-3Ju" id="qkK-kj-0WY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2806" y="133"/>
         </scene>
@@ -289,7 +307,7 @@
         <image name="sigh.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="53t-hG-Cpy"/>
         <segue reference="Fov-E3-Qox"/>
-        <segue reference="OC3-li-77y"/>
     </inferredMetricsTieBreakers>
 </document>

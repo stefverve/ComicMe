@@ -12,6 +12,7 @@
 @interface CanvasViewController () 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewBarButton;
+@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *stickerPanGesture;
 
 @end
 
@@ -38,5 +39,7 @@
     }
 }
 
+- (IBAction)stickerMovement:(UIPanGestureRecognizer *)sender {
+}
 
 @end

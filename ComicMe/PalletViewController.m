@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (nonatomic) NSArray * stickerCollection;
+@property (strong, nonatomic) UIImageView * currentSticker;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *newStickerTapGesture;
 
 @end
 
@@ -52,6 +54,10 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionView *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
     return 0; // This is the minimum inter item spacing, can be more
+}
+
+- (IBAction)newStickerTapped:(UITapGestureRecognizer *)sender {
+    
 }
 
 

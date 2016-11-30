@@ -27,49 +27,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.sm = [StoryManager sharedManager];
-    
- //   __weak ViewController *welf = self;
-    
-    
-    
-    self.tempPictureArray = @[[UIImage imageNamed:@"creeper.jpg"],
-                                  [UIImage imageNamed:@"chairs.jpg"],
-                                  [UIImage imageNamed:@"femaleface.jpg"],
-                                  [UIImage imageNamed:@"jellyfish.jpg"],
-                                  [UIImage imageNamed:@"maleface.jpg"],
-                                  [UIImage imageNamed:@"metric1.jpg"],
-                                  [UIImage imageNamed:@"metric2.jpg"],
-                                  [UIImage imageNamed:@"metric3.jpg"],
-                                  [UIImage imageNamed:@"portrait.jpg"],
-                                  [UIImage imageNamed:@"tree.jpg"]];
-    
+    [self.sm getStoryCollection];
     self.storyCollectionView.dataSource = self;
     self.storyCollectionView.delegate = self;
-    
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.sm getStoryCollection];
+    [self.storyCollectionView reloadData];
+}
+
+#pragma mark - Collection View Data Source
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.tempPictureArray.count;
+    return self.sm.storyCollection.count;
 }
 
 - (StoryCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     StoryCollectionViewCell * cell = [self.storyCollectionView dequeueReusableCellWithReuseIdentifier:@"myCell" forIndexPath:indexPath];
-    cell.storyImageView.image = self.tempPictureArray[indexPath.row];
+    UIImage * currentImage = [self.sm getUIImage:indexPath.row];
+    cell.storyImageView.image = currentImage;
     return cell;
 }
 
+#pragma mark - General Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(StoryCollectionViewCell *)sender {
     if ([segue.identifier isEqualToString:@"detailView"]) {
         DisplayViewController * dVC = segue.destinationViewController;
         dVC.displayImage = sender.storyImageView.image;
     }
     if ([segue.identifier isEqualToString:@"addStory"]) {
-        CanvasViewController * cvc = segue.destinationViewController;
-        //cvc.currentStory = [self.sm createNewStory];
+        [self.sm createNewStory];
     }
 }
 

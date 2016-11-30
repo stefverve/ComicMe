@@ -12,13 +12,10 @@
 @interface CanvasViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewBarButton;
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraRollButton;
 @property (strong, nonatomic) UIImageView * currentImage;
-
-
 @property (weak, nonatomic) StoryManager * sm;
 
 @end
@@ -34,7 +31,6 @@
     self.sm = [StoryManager sharedManager];
     UIPinchGestureRecognizer *pinchy = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerPinch:)];
     [self.view addGestureRecognizer:pinchy];
-    
 }
 
 - (void) stickerPinch:(UIPinchGestureRecognizer*)sender {
@@ -107,6 +103,7 @@
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo {
     self.imageView.image = image;
+    [self.sm setUIImage:image];
     self.cameraButton.hidden = YES;
     self.cameraRollButton.hidden = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];

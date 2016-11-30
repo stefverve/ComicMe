@@ -14,12 +14,20 @@
 #import "AppDelegate.h"
 
 @interface StoryManager : NSObject {NSMutableArray * stories;}
-
 @property (nonatomic) NSManagedObjectContext * context;
-@property (nonatomic, retain) NSMutableArray <Story *> * stories;
+@property (nonatomic, retain) NSArray <Story *> * storyCollection;
+@property (nonatomic, strong) Story * currentStory;
+@property (nonatomic, strong) Image * currentImage;
+
+//Image Methods
+-(void) setUIImage: (UIImage *) image;
+-(UIImage*) getUIImage: (NSInteger) index;
+
+//Story Methods
+- (void) createNewStory;
+- (void) getStoryCollection;
 
 + (id) sharedManager;
-- (Story *) createNewStory;
 - (Layer *) createNewLayer;
 
 @end

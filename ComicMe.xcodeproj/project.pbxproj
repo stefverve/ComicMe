@@ -10,6 +10,7 @@
 		1D57F4D21DED31F6008CE38A /* PalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D57F4D11DED31F6008CE38A /* PalletViewController.m */; };
 		1D57F4D61DED3572008CE38A /* StampCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */; };
 		1D57F5041DED3E35008CE38A /* stickers in Resources */ = {isa = PBXBuildFile; fileRef = 1D57F5031DED3E35008CE38A /* stickers */; };
+		1DAC736F1DEE8776004B93AE /* ComicMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C681DECA3DF00EAA982 /* ComicMe.xcdatamodeld */; };
 		E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C5D1DECA3DF00EAA982 /* main.m */; };
 		E24E3C611DECA3DF00EAA982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C601DECA3DF00EAA982 /* AppDelegate.m */; };
 		E24E3C641DECA3DF00EAA982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C631DECA3DF00EAA982 /* ViewController.m */; };
@@ -30,12 +31,6 @@
 		E24E3C941DECC79A00EAA982 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C931DECC79A00EAA982 /* DisplayViewController.m */; };
 		E24E3C971DECE23900EAA982 /* StoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C961DECE23900EAA982 /* StoryManager.m */; };
 		E24E3C9A1DECFDF100EAA982 /* CanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C991DECFDF100EAA982 /* CanvasViewController.m */; };
-		E24E3CA71DEDF78600EAA982 /* Image+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C9C1DEDF78600EAA982 /* Image+CoreDataClass.m */; };
-		E24E3CA81DEDF78600EAA982 /* Image+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C9E1DEDF78600EAA982 /* Image+CoreDataProperties.m */; };
-		E24E3CA91DEDF78600EAA982 /* Story+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3CA01DEDF78600EAA982 /* Story+CoreDataClass.m */; };
-		E24E3CAA1DEDF78600EAA982 /* Story+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3CA21DEDF78600EAA982 /* Story+CoreDataProperties.m */; };
-		E24E3CAB1DEDF78600EAA982 /* Layer+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3CA41DEDF78600EAA982 /* Layer+CoreDataClass.m */; };
-		E24E3CAC1DEDF78600EAA982 /* Layer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3CA61DEDF78600EAA982 /* Layer+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,18 +68,6 @@
 		E24E3C961DECE23900EAA982 /* StoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryManager.m; sourceTree = "<group>"; };
 		E24E3C981DECFDF100EAA982 /* CanvasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasViewController.h; sourceTree = "<group>"; };
 		E24E3C991DECFDF100EAA982 /* CanvasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasViewController.m; sourceTree = "<group>"; };
-		E24E3C9B1DEDF78600EAA982 /* Image+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image+CoreDataClass.h"; sourceTree = "<group>"; };
-		E24E3C9C1DEDF78600EAA982 /* Image+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Image+CoreDataClass.m"; sourceTree = "<group>"; };
-		E24E3C9D1DEDF78600EAA982 /* Image+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E24E3C9E1DEDF78600EAA982 /* Image+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Image+CoreDataProperties.m"; sourceTree = "<group>"; };
-		E24E3C9F1DEDF78600EAA982 /* Story+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Story+CoreDataClass.h"; sourceTree = "<group>"; };
-		E24E3CA01DEDF78600EAA982 /* Story+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Story+CoreDataClass.m"; sourceTree = "<group>"; };
-		E24E3CA11DEDF78600EAA982 /* Story+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Story+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E24E3CA21DEDF78600EAA982 /* Story+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Story+CoreDataProperties.m"; sourceTree = "<group>"; };
-		E24E3CA31DEDF78600EAA982 /* Layer+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Layer+CoreDataClass.h"; sourceTree = "<group>"; };
-		E24E3CA41DEDF78600EAA982 /* Layer+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Layer+CoreDataClass.m"; sourceTree = "<group>"; };
-		E24E3CA51DEDF78600EAA982 /* Layer+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Layer+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E24E3CA61DEDF78600EAA982 /* Layer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Layer+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,18 +109,6 @@
 		E24E3C501DECA3DF00EAA982 = {
 			isa = PBXGroup;
 			children = (
-				E24E3C9B1DEDF78600EAA982 /* Image+CoreDataClass.h */,
-				E24E3C9C1DEDF78600EAA982 /* Image+CoreDataClass.m */,
-				E24E3C9D1DEDF78600EAA982 /* Image+CoreDataProperties.h */,
-				E24E3C9E1DEDF78600EAA982 /* Image+CoreDataProperties.m */,
-				E24E3C9F1DEDF78600EAA982 /* Story+CoreDataClass.h */,
-				E24E3CA01DEDF78600EAA982 /* Story+CoreDataClass.m */,
-				E24E3CA11DEDF78600EAA982 /* Story+CoreDataProperties.h */,
-				E24E3CA21DEDF78600EAA982 /* Story+CoreDataProperties.m */,
-				E24E3CA31DEDF78600EAA982 /* Layer+CoreDataClass.h */,
-				E24E3CA41DEDF78600EAA982 /* Layer+CoreDataClass.m */,
-				E24E3CA51DEDF78600EAA982 /* Layer+CoreDataProperties.h */,
-				E24E3CA61DEDF78600EAA982 /* Layer+CoreDataProperties.m */,
 				E24E3C5B1DECA3DF00EAA982 /* ComicMe */,
 				E24E3C5A1DECA3DF00EAA982 /* Products */,
 			);
@@ -156,16 +127,11 @@
 			children = (
 				1D57F52D1DEDF211008CE38A /* Main Collection */,
 				1D57F4D31DED3284008CE38A /* Canvas */,
-				E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */,
-				E24E3C601DECA3DF00EAA982 /* AppDelegate.m */,
 				E24E3C951DECE23900EAA982 /* StoryManager.h */,
 				E24E3C961DECE23900EAA982 /* StoryManager.m */,
 				E24E3C921DECC79A00EAA982 /* DisplayViewController.h */,
 				E24E3C931DECC79A00EAA982 /* DisplayViewController.m */,
 				E24E3C651DECA3DF00EAA982 /* Main.storyboard */,
-				E24E3C6B1DECA3DF00EAA982 /* Assets.xcassets */,
-				E24E3C6D1DECA3DF00EAA982 /* LaunchScreen.storyboard */,
-				E24E3C701DECA3DF00EAA982 /* Info.plist */,
 				E24E3C681DECA3DF00EAA982 /* ComicMe.xcdatamodeld */,
 				E24E3C5C1DECA3DF00EAA982 /* Supporting Files */,
 			);
@@ -175,6 +141,11 @@
 		E24E3C5C1DECA3DF00EAA982 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */,
+				E24E3C601DECA3DF00EAA982 /* AppDelegate.m */,
+				E24E3C6B1DECA3DF00EAA982 /* Assets.xcassets */,
+				E24E3C6D1DECA3DF00EAA982 /* LaunchScreen.storyboard */,
+				E24E3C701DECA3DF00EAA982 /* Info.plist */,
 				E24E3C7E1DECC3EF00EAA982 /* chairs.jpg */,
 				E24E3C7F1DECC3EF00EAA982 /* creeper.jpg */,
 				E24E3C801DECC3EF00EAA982 /* femaleface.jpg */,
@@ -273,20 +244,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DAC736F1DEE8776004B93AE /* ComicMe.xcdatamodeld in Sources */,
 				1D57F4D21DED31F6008CE38A /* PalletViewController.m in Sources */,
 				E24E3C7D1DECBEA400EAA982 /* StoryCollectionViewCell.m in Sources */,
 				E24E3C941DECC79A00EAA982 /* DisplayViewController.m in Sources */,
-				E24E3CA91DEDF78600EAA982 /* Story+CoreDataClass.m in Sources */,
-				E24E3CA81DEDF78600EAA982 /* Image+CoreDataProperties.m in Sources */,
 				E24E3C641DECA3DF00EAA982 /* ViewController.m in Sources */,
-				E24E3CAB1DEDF78600EAA982 /* Layer+CoreDataClass.m in Sources */,
 				E24E3C9A1DECFDF100EAA982 /* CanvasViewController.m in Sources */,
 				E24E3C611DECA3DF00EAA982 /* AppDelegate.m in Sources */,
-				E24E3CAA1DEDF78600EAA982 /* Story+CoreDataProperties.m in Sources */,
 				E24E3C971DECE23900EAA982 /* StoryManager.m in Sources */,
 				1D57F4D61DED3572008CE38A /* StampCollectionViewCell.m in Sources */,
-				E24E3CAC1DEDF78600EAA982 /* Layer+CoreDataProperties.m in Sources */,
-				E24E3CA71DEDF78600EAA982 /* Image+CoreDataClass.m in Sources */,
 				E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

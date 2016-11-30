@@ -11,6 +11,8 @@
 		1D57F4D61DED3572008CE38A /* StampCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */; };
 		1D57F5041DED3E35008CE38A /* stickers in Resources */ = {isa = PBXBuildFile; fileRef = 1D57F5031DED3E35008CE38A /* stickers */; };
 		1DAC736F1DEE8776004B93AE /* ComicMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C681DECA3DF00EAA982 /* ComicMe.xcdatamodeld */; };
+		1DAC73721DEF39FE004B93AE /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAC73711DEF39FE004B93AE /* PageViewController.m */; };
+		1DAC73771DEF3DA2004B93AE /* PageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAC73761DEF3DA2004B93AE /* PageCollectionViewCell.m */; };
 		E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C5D1DECA3DF00EAA982 /* main.m */; };
 		E24E3C611DECA3DF00EAA982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C601DECA3DF00EAA982 /* AppDelegate.m */; };
 		E24E3C641DECA3DF00EAA982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C631DECA3DF00EAA982 /* ViewController.m */; };
@@ -32,6 +34,10 @@
 		1D57F4D41DED3572008CE38A /* StampCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampCollectionViewCell.h; sourceTree = "<group>"; };
 		1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampCollectionViewCell.m; sourceTree = "<group>"; };
 		1D57F5031DED3E35008CE38A /* stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = stickers; sourceTree = "<group>"; };
+		1DAC73701DEF39FE004B93AE /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		1DAC73711DEF39FE004B93AE /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		1DAC73751DEF3DA2004B93AE /* PageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageCollectionViewCell.h; sourceTree = "<group>"; };
+		1DAC73761DEF3DA2004B93AE /* PageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCollectionViewCell.m; sourceTree = "<group>"; };
 		E24E3C591DECA3DF00EAA982 /* ComicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24E3C5D1DECA3DF00EAA982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 				E2FE447B1DEE70BD00435F7F /* PaintView.m */,
 				E2FE447D1DEE710000435F7F /* FingerPaintGesture.h */,
 				E2FE447E1DEE710000435F7F /* FingerPaintGesture.m */,
+				1DAC73731DEF3CCD004B93AE /* Pages */,
 			);
 			name = Canvas;
 			sourceTree = "<group>";
@@ -101,6 +108,17 @@
 				E24E3C7C1DECBEA400EAA982 /* StoryCollectionViewCell.m */,
 			);
 			name = "Main Collection";
+			sourceTree = "<group>";
+		};
+		1DAC73731DEF3CCD004B93AE /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				1DAC73701DEF39FE004B93AE /* PageViewController.h */,
+				1DAC73711DEF39FE004B93AE /* PageViewController.m */,
+				1DAC73751DEF3DA2004B93AE /* PageCollectionViewCell.h */,
+				1DAC73761DEF3DA2004B93AE /* PageCollectionViewCell.m */,
+			);
+			name = Pages;
 			sourceTree = "<group>";
 		};
 		E24E3C501DECA3DF00EAA982 = {
@@ -234,6 +252,8 @@
 				E2FE44791DEE6FEE00435F7F /* DrawViewController.m in Sources */,
 				E2FE447F1DEE710000435F7F /* FingerPaintGesture.m in Sources */,
 				E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */,
+				1DAC73721DEF39FE004B93AE /* PageViewController.m in Sources */,
+				1DAC73771DEF3DA2004B93AE /* PageCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

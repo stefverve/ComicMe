@@ -17,6 +17,7 @@ typedef void(^pan_block_t)(UIPanGestureRecognizer * sender, CanvasViewController
 @protocol DrawViewDelegate <NSObject>
 
 - (void) addDrawView:(PaintView *)paintView;
+- (void) addCustomImage:(UIImageView *)imageView; 
 - (void) setPanBlock:(pan_block_t)panBlock;
 
 @end

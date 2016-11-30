@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ioA-Py-6pN">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ioA-Py-6pN">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -117,6 +117,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IJA-Bk-Ruv" secondAttribute="height" id="I0J-zp-krM"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0kg-OO-Y8Y" appends="YES" id="FV0-sY-g7O"/>
+                                </connections>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-Jd-NHw">
                                 <rect key="frame" x="0.0" y="478" width="414" height="258"/>
@@ -126,6 +129,7 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8ns-sU-gcT" firstAttribute="top" secondItem="JD3-Jd-NHw" secondAttribute="bottom" id="EB6-8R-MhA"/>
                             <constraint firstItem="IJA-Bk-Ruv" firstAttribute="width" secondItem="EcX-Fc-dZr" secondAttribute="width" id="P4Z-qX-L6P"/>
@@ -154,6 +158,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9PI-BP-AdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="0kg-OO-Y8Y">
+                    <connections>
+                        <action selector="panGestureWithBlock:" destination="d81-L9-T9S" id="vYZ-NK-K9y"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1823" y="39"/>
         </scene>
@@ -344,7 +353,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="irL-MI-WOw" customClass="PageCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="-11.666666666666666" width="163" height="183"/>
+                                        <rect key="frame" x="0.0" y="-12" width="163" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="163" height="183"/>

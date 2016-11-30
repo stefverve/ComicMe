@@ -39,14 +39,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PaintView *newPaintView = [PaintView new];
-    
-    self.paintView = newPaintView;
-    
-    self.paintView.backgroundColor = [UIColor blackColor];
-    
-    [self.delegate addDrawView:self.paintView];
-    
 
     
     
@@ -68,6 +60,18 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    PaintView *newPaintView = [PaintView new];
+    
+    self.paintView = newPaintView;
+    
+    self.paintView.backgroundColor = [UIColor clearColor];
+    
+    self.paintView.userInteractionEnabled = NO;
+    
+    [self.delegate addDrawView:self.paintView];
+    
+    
+    
     void (^panBlock)(UIPanGestureRecognizer * sender, CanvasViewController * cvc) = ^(UIPanGestureRecognizer * sender, CanvasViewController * cvc) {
         if (sender.state == UIGestureRecognizerStateBegan) {
             if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
@@ -78,7 +82,8 @@
             [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
             self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
-            [self.paintView.gestureCollection addObject:[FingerPaintGesture new]];
+            FingerPaintGesture *fpg = [FingerPaintGesture new];
+            [self.paintView.gestureCollection addObject:fpg];
             self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushColour = self.currentColour;
             self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushSize = self.currentBrushSize;
         }
@@ -86,6 +91,18 @@
         [self.paintView setNeedsDisplay];
     };
     [self.delegate setPanBlock:panBlock];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(self.paintView.frame.size, NO, [UIScreen mainScreen].scale);
+    } else {
+        UIGraphicsBeginImageContext(self.paintView.frame.size);
+    }
+    [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
+    self.paintView = nil;
+    [self.delegate addCustomImage:[[UIImageView alloc] initWithImage:self.paintView.currentImage]];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -106,23 +123,23 @@
     self.paintColourViewTrailing.constant = 47.5 - sender.value/2;
 }
 
-- (IBAction)drawInPaintView:(UIPanGestureRecognizer *)sender {
-    if (sender.state == UIGestureRecognizerStateBegan) {
-        if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
-            UIGraphicsBeginImageContextWithOptions(self.paintView.frame.size, NO, [UIScreen mainScreen].scale);
-        } else {
-            UIGraphicsBeginImageContext(self.paintView.frame.size);
-        }
-        [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
-        self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        [self.paintView.gestureCollection addObject:[FingerPaintGesture new]];
-        self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushColour = self.currentColour;
-        self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushSize = self.currentBrushSize;
-    }
-    [self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].gestureArray addObject:[NSValue valueWithCGPoint:[sender locationInView:self.paintView]]];
-    [self.paintView setNeedsDisplay];
-}
+//- (IBAction)drawInPaintView:(UIPanGestureRecognizer *)sender {
+//    if (sender.state == UIGestureRecognizerStateBegan) {
+//        if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+//            UIGraphicsBeginImageContextWithOptions(self.paintView.frame.size, NO, [UIScreen mainScreen].scale);
+//        } else {
+//            UIGraphicsBeginImageContext(self.paintView.frame.size);
+//        }
+//        [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
+//        self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//        [self.paintView.gestureCollection addObject:[FingerPaintGesture new]];
+//        self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushColour = self.currentColour;
+//        self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushSize = self.currentBrushSize;
+//    }
+//    [self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].gestureArray addObject:[NSValue valueWithCGPoint:[sender locationInView:self.paintView]]];
+//    [self.paintView setNeedsDisplay];
+//}
 
 - (IBAction)undoButtonPressed:(UIButton *)sender {
     self.paintView.undo = YES;

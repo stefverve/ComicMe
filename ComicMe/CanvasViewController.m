@@ -22,6 +22,7 @@
 @property (strong, nonatomic) PaintView * currentPaintView;
 @property (weak, nonatomic) StoryManager * sm;
 @property (nonatomic) UITabBarController * tabBarController;
+@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
 
 @end
 
@@ -38,9 +39,11 @@
     [self.view addGestureRecognizer:pinchy];
  //   UIPanGestureRecognizer *panny = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
  //   [self.view addGestureRecognizer:panny];
-    
+    self.imageView.userInteractionEnabled = YES;
     
     self.imageViewRect = self.imageView.frame;
+    
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 
 - (void) stickerPinch:(UIPinchGestureRecognizer*)sender {
@@ -69,27 +72,37 @@
     }
 }
 
--(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *aTouch = [touches anyObject];
+//-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//    UITouch *aTouch = [touches anyObject];
+//
+//    CGPoint location = [aTouch locationInView:self.imageView];
+//    
+//    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
+//    self.currentImage.center = location;
+//    [UIView commitAnimations];
+//}
 
-    CGPoint location = [aTouch locationInView:self.imageView];
-    
-    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
-    self.currentImage.center = location;
-    [UIView commitAnimations];
+
+- (IBAction)panGestureWithBlock:(UIPanGestureRecognizer *)sender {
+    self.panBlock(sender, self);
 }
-
-
 
 
 - (void) addStickerView:(UIImageView *)imageView {
     
-    // CORE DATA REQUEST TO ADD NEW LAYER
-    
-    
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
+    
+    // CORE DATA REQUEST TO ADD NEW LAYER
+}
+
+- (void) addCustomImage:(UIImageView *)imageView {
+    [self.imageView addSubview:imageView];
+    [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
+    self.currentImage = imageView;
+    
+    // ADD NEW LAYER IN CORE DATA
 }
 
 - (void) addDrawView:(PaintView *)paintView {

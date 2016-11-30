@@ -10,9 +10,9 @@
 
 @implementation PaintView
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)init//WithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithCoder:aDecoder];
+    self = [super init];//WithCoder:aDecoder];
     if (self) {
         _gestureCollection = [NSMutableArray new];
     }

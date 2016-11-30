@@ -10,6 +10,7 @@
 #import "PalletViewController.h"
 #import "DrawViewController.h"
 #import "PaintView.h"
+#import "FingerPaintGesture.h"
 #import "TabViewProtocols.h"
 @class Story;
 
@@ -24,5 +25,6 @@
 
 - (void) addStickerView:(UIImageView *)imageView;
 - (void) addDrawView:(PaintView *)paintView;
+- (void) addCustomImage:(UIImageView *)imageView;
 
 @end

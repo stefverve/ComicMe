@@ -10,6 +10,7 @@
 #import "DisplayViewController.h"
 #import "DrawViewController.h"
 #import "PaintView.h"
+#import "PageViewController.h"
 
 @interface CanvasViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) UIImageView * currentImage;
 @property (strong, nonatomic) PaintView * currentPaintView;
 @property (weak, nonatomic) StoryManager * sm;
+@property (nonatomic) UITabBarController * tabBarController;
 
 @end
 
@@ -60,14 +62,12 @@
         DisplayViewController * dVC = segue.destinationViewController;
         dVC.hideEditButton = YES;
     } else if ([segue.identifier isEqualToString:@"tabBarSegue"]) {
-        UITabBarController *tbc = segue.destinationViewController;
-        for (UIViewController* vc in tbc.viewControllers) {
+        self.tabBarController = segue.destinationViewController;
+        for (UIViewController* vc in self.tabBarController.viewControllers) {
             [vc setValue:self forKey:@"delegate"];
         }
     }
 }
-
-
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *aTouch = [touches anyObject];
@@ -119,9 +119,10 @@
     self.imageView.image = image;
     [self.sm setUIImage:image];
     
-    //Notification to update pages
-    NSNotification * notice = [NSNotification notificationWithName:@"changesToPageImage" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotification:notice];
+    //Update Page Panel
+    NSArray * controllers = self.tabBarController.viewControllers;
+    PageViewController * pagesController = [controllers firstObject];
+    [pagesController reloadCollection];
     
     self.cameraButton.hidden = YES;
     self.cameraRollButton.hidden = YES;

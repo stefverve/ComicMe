@@ -11,7 +11,7 @@
 #import "StoryManager.h"
 
 @interface PageViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionVIew;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) StoryManager * sm;
 @end
 
@@ -45,8 +45,12 @@
     return cell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(self.collectionView.frame.size.height, self.collectionView.frame.size.height);
+}
+
 - (void) reloadCollection {
-    [self.collectionVIew reloadData];
+    [self.collectionView reloadData];
 }
 
 @end

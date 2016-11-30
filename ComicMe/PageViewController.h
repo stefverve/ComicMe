@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol PagesViewDelegate <NSObject>
 
+@end
 @interface PageViewController : UIViewController
+@property (weak, nonatomic) id<PagesViewDelegate> delegate;
 
+- (void) reloadCollection;
 @end

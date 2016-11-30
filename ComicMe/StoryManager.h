@@ -16,6 +16,7 @@
 @interface StoryManager : NSObject {NSMutableArray * stories;}
 @property (nonatomic) NSManagedObjectContext * context;
 @property (nonatomic, retain) NSArray <Story *> * storyCollection;
+@property (nonatomic, retain) NSOrderedSet <Image*> * imageCollection;
 @property (nonatomic, strong) Story * currentStory;
 @property (nonatomic, strong) Image * currentImage;
 

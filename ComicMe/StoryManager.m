@@ -54,6 +54,7 @@
     NSOrderedSet *imageSet = [NSOrderedSet orderedSetWithArray:@[self.currentImage, secondImage]];
     self.currentStory.images = imageSet;
     [self saveCoreData];
+    self.imageCollection = self.currentStory.images;
 }
 
 - (void) getStoryCollection {
@@ -88,9 +89,13 @@
 -(void) addNewImage {
     Image * newImage = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:self.context];
     NSMutableOrderedSet *set = (NSMutableOrderedSet *)self.currentStory.images.mutableCopy;
-    [set addObject:newImage];
-    self.currentStory.images = (NSOrderedSet *)set.copy;
-    [self saveCoreData];
+    if (set.count < 6) {
+        [set addObject:newImage];
+        self.currentStory.images = (NSOrderedSet *)set.copy;
+        [self saveCoreData];
+        self.imageCollection = self.currentStory.images;
+    }
+
 }
 
 -(void) changeCurrentImage: (NSInteger) index {

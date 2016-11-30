@@ -11,7 +11,7 @@
 
 @protocol PalletViewDelegate <NSObject>
 
-- (void) addStickerView:(UIImage *)sticker;
+- (void) addStickerView:(UIImageView *)imageView;
 
 @end
 

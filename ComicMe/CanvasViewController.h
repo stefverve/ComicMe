@@ -19,7 +19,7 @@
 @property (nonatomic) BOOL hidePreviewButton;
 @property (nonatomic) Story * currentStory;
 
-- (void) addStickerView:(UIImage *)sticker;
-- (void) addDrawView:(DrawViewController *)drawViewController;
+- (void) addStickerView:(UIImageView *)imageView;
+- (void) addDrawView:(PaintView *)paintView;
 
 @end

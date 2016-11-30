@@ -34,6 +34,10 @@
     self.sm = [StoryManager sharedManager];
     UIPinchGestureRecognizer *pinchy = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerPinch:)];
     [self.view addGestureRecognizer:pinchy];
+ //   UIPanGestureRecognizer *panny = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+ //   [self.view addGestureRecognizer:panny];
+    
+    
     self.imageViewRect = self.imageView.frame;
 }
 
@@ -45,7 +49,6 @@
     self.currentImage.center = [sender locationInView:self.imageView];
     [UIView commitAnimations];
     
-    //CGRectMake(self.currentImage.center.x, self.currentImage.center.y, 300*sender.scale, 300*sender.scale);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,9 +59,11 @@
     if ([segue.identifier isEqualToString:@"preview"]) {
         DisplayViewController * dVC = segue.destinationViewController;
         dVC.hideEditButton = YES;
-//    } else if ([segue.identifier isEqualToString:@"palletView"]) {
-//        PalletViewController *pVC = segue.destinationViewController;
-//        pVC.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"tabBarSegue"]) {
+        UITabBarController *tbc = segue.destinationViewController;
+        for (UIViewController* vc in tbc.viewControllers) {
+            [vc setValue:self forKey:@"delegate"];
+        }
     }
 }
 
@@ -77,24 +82,20 @@
 
 
 
-- (void) addStickerView:(UIImage *)sticker {
+- (void) addStickerView:(UIImageView *)imageView {
     
     // CORE DATA REQUEST TO ADD NEW LAYER
     
-    UIImageView *newImage = [[UIImageView alloc] initWithImage:sticker];
     
-    [self.imageView addSubview:newImage];
-    [newImage setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
-    self.currentImage = newImage;
+    [self.imageView addSubview:imageView];
+    [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
+    self.currentImage = imageView;
 }
 
-- (void) addDrawView:(DrawViewController *)drawViewController {
-//    PaintView *newPaintView = [PaintView new];
-//    newPaintView.frame = self.imageView.frame;
-//    [drawViewController attachDrawView:newPaintView];
-//    [self.imageView addSubview:newPaintView];
-//    newPaintView.backgroundColor = [UIColor blackColor];
-//    self.currentPaintView = newPaintView;
+- (void) addDrawView:(PaintView *)paintView {
+    [paintView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
+    paintView.frame = self.imageView.bounds;
+    [self.imageView addSubview:paintView];
 }
 
 #pragma mark - Photo and camera stuff

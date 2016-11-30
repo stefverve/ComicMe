@@ -87,9 +87,9 @@
 
 -(void) addNewImage {
     Image * newImage = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:self.context];
-    NSMutableSet * set = (self.currentStory.images).copy;
+    NSMutableOrderedSet *set = (NSMutableOrderedSet *)self.currentStory.images.mutableCopy;
     [set addObject:newImage];
-    self.currentStory.images = [NSOrderedSet orderedSetWithSet: set];
+    self.currentStory.images = (NSOrderedSet *)set.copy;
     [self saveCoreData];
 }
 

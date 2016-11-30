@@ -8,15 +8,18 @@
 
 #import "ViewController.h"
 #import "PalletViewController.h"
+#import "DrawViewController.h"
+#import "PaintView.h"
 @class Story;
 
-@interface CanvasViewController : ViewController <PalletViewDelegate>
+@interface CanvasViewController : ViewController <PalletViewDelegate, DrawViewDelegate>
 
 
-
+@property CGRect imageViewRect;
 @property (nonatomic) BOOL hidePreviewButton;
 @property (nonatomic) Story * currentStory;
 
 - (void) addStickerView:(UIImage *)sticker;
+- (void) addDrawView:(DrawViewController *)drawViewController;
 
 @end

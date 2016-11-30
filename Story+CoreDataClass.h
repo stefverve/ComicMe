@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Story : NSManagedObject
 
-@property (nonatomic) NSDate * timeStamp;
+//@property (nonatomic) NSDate * timeStamp;
 
 - (void) wrap;
 - (void) unwrap;

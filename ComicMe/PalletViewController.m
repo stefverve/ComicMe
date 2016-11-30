@@ -28,8 +28,8 @@
     self.stickerCollection = [[NSFileManager defaultManager]
                                     contentsOfDirectoryAtPath:folderPath error:&error];
     
-    self.collectionView.contentInset = UIEdgeInsetsMake(-60, 0, 0, 0);
-    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +45,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     StampCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    //cell.imageView.image = [UIImage imageNamed:self.stickerCollection[indexPath.row]];
+    
     NSString * imageName = [NSString stringWithFormat:@"stickers/%@", self.stickerCollection[indexPath.row]];
     cell.imageView.image = [UIImage imageNamed:imageName];
     CGRect cellSize = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, self.collectionView.frame.size.width/4, self.collectionView.frame.size.width/4);

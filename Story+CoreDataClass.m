@@ -11,7 +11,7 @@
 #import "Image+CoreDataClass.h"
 @implementation Story
 
-@synthesize timeStamp;
+//@synthesize timeStamp;
 
 - (void) wrap {
     

@@ -36,6 +36,9 @@
 		E24E3CAA1DEDF78600EAA982 /* Story+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3CA21DEDF78600EAA982 /* Story+CoreDataProperties.m */; };
 		E24E3CAB1DEDF78600EAA982 /* Layer+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3CA41DEDF78600EAA982 /* Layer+CoreDataClass.m */; };
 		E24E3CAC1DEDF78600EAA982 /* Layer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3CA61DEDF78600EAA982 /* Layer+CoreDataProperties.m */; };
+		E2FE44791DEE6FEE00435F7F /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FE44781DEE6FEE00435F7F /* DrawViewController.m */; };
+		E2FE447C1DEE70BD00435F7F /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FE447B1DEE70BD00435F7F /* PaintView.m */; };
+		E2FE447F1DEE710000435F7F /* FingerPaintGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FE447E1DEE710000435F7F /* FingerPaintGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,12 @@
 		E24E3CA41DEDF78600EAA982 /* Layer+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Layer+CoreDataClass.m"; sourceTree = "<group>"; };
 		E24E3CA51DEDF78600EAA982 /* Layer+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Layer+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E24E3CA61DEDF78600EAA982 /* Layer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Layer+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E2FE44771DEE6FEE00435F7F /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
+		E2FE44781DEE6FEE00435F7F /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
+		E2FE447A1DEE70BD00435F7F /* PaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
+		E2FE447B1DEE70BD00435F7F /* PaintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
+		E2FE447D1DEE710000435F7F /* FingerPaintGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FingerPaintGesture.h; sourceTree = "<group>"; };
+		E2FE447E1DEE710000435F7F /* FingerPaintGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FingerPaintGesture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +117,12 @@
 				1D57F4D11DED31F6008CE38A /* PalletViewController.m */,
 				1D57F4D41DED3572008CE38A /* StampCollectionViewCell.h */,
 				1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */,
+				E2FE44771DEE6FEE00435F7F /* DrawViewController.h */,
+				E2FE44781DEE6FEE00435F7F /* DrawViewController.m */,
+				E2FE447A1DEE70BD00435F7F /* PaintView.h */,
+				E2FE447B1DEE70BD00435F7F /* PaintView.m */,
+				E2FE447D1DEE710000435F7F /* FingerPaintGesture.h */,
+				E2FE447E1DEE710000435F7F /* FingerPaintGesture.m */,
 			);
 			name = Canvas;
 			sourceTree = "<group>";
@@ -274,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D57F4D21DED31F6008CE38A /* PalletViewController.m in Sources */,
+				E2FE447C1DEE70BD00435F7F /* PaintView.m in Sources */,
 				E24E3C7D1DECBEA400EAA982 /* StoryCollectionViewCell.m in Sources */,
 				E24E3C941DECC79A00EAA982 /* DisplayViewController.m in Sources */,
 				E24E3CA91DEDF78600EAA982 /* Story+CoreDataClass.m in Sources */,
@@ -285,7 +301,9 @@
 				E24E3CAA1DEDF78600EAA982 /* Story+CoreDataProperties.m in Sources */,
 				E24E3C971DECE23900EAA982 /* StoryManager.m in Sources */,
 				1D57F4D61DED3572008CE38A /* StampCollectionViewCell.m in Sources */,
+				E2FE44791DEE6FEE00435F7F /* DrawViewController.m in Sources */,
 				E24E3CAC1DEDF78600EAA982 /* Layer+CoreDataProperties.m in Sources */,
+				E2FE447F1DEE710000435F7F /* FingerPaintGesture.m in Sources */,
 				E24E3CA71DEDF78600EAA982 /* Image+CoreDataClass.m in Sources */,
 				E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */,
 			);

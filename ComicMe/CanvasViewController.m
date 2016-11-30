@@ -8,6 +8,8 @@
 
 #import "CanvasViewController.h"
 #import "DisplayViewController.h"
+#import "DrawViewController.h"
+#import "PaintView.h"
 
 @interface CanvasViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -17,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraRollButton;
 @property (strong, nonatomic) UIImageView * currentImage;
-
+@property (strong, nonatomic) PaintView * currentPaintView;
 
 @property (weak, nonatomic) StoryManager * sm;
 
@@ -34,7 +36,7 @@
     self.sm = [StoryManager sharedManager];
     UIPinchGestureRecognizer *pinchy = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerPinch:)];
     [self.view addGestureRecognizer:pinchy];
-    
+    self.imageViewRect = self.imageView.frame;
 }
 
 - (void) stickerPinch:(UIPinchGestureRecognizer*)sender {
@@ -56,9 +58,9 @@
     if ([segue.identifier isEqualToString:@"preview"]) {
         DisplayViewController * dVC = segue.destinationViewController;
         dVC.hideEditButton = YES;
-    } else if ([segue.identifier isEqualToString:@"palletView"]) {
-        PalletViewController *pVC = segue.destinationViewController;
-        pVC.delegate = self;
+//    } else if ([segue.identifier isEqualToString:@"palletView"]) {
+//        PalletViewController *pVC = segue.destinationViewController;
+//        pVC.delegate = self;
     }
 }
 
@@ -86,6 +88,15 @@
     [self.imageView addSubview:newImage];
     [newImage setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = newImage;
+}
+
+- (void) addDrawView:(DrawViewController *)drawViewController {
+//    PaintView *newPaintView = [PaintView new];
+//    newPaintView.frame = self.imageView.frame;
+//    [drawViewController attachDrawView:newPaintView];
+//    [self.imageView addSubview:newPaintView];
+//    newPaintView.backgroundColor = [UIColor blackColor];
+//    self.currentPaintView = newPaintView;
 }
 
 #pragma mark - Photo and camera stuff

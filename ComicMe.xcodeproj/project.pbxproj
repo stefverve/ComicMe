@@ -57,6 +57,7 @@
 		E24E3C961DECE23900EAA982 /* StoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryManager.m; sourceTree = "<group>"; };
 		E24E3C981DECFDF100EAA982 /* CanvasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasViewController.h; sourceTree = "<group>"; };
 		E24E3C991DECFDF100EAA982 /* CanvasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasViewController.m; sourceTree = "<group>"; };
+		E276BCCB1DEF5ED800BEE58F /* TabViewProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabViewProtocols.h; sourceTree = "<group>"; };
 		E2FE44771DEE6FEE00435F7F /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
 		E2FE44781DEE6FEE00435F7F /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		E2FE447A1DEE70BD00435F7F /* PaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 				1D57F5031DED3E35008CE38A /* stickers */,
 				E24E3C981DECFDF100EAA982 /* CanvasViewController.h */,
 				E24E3C991DECFDF100EAA982 /* CanvasViewController.m */,
+				E276BCCB1DEF5ED800BEE58F /* TabViewProtocols.h */,
 				1D57F4D01DED31F6008CE38A /* PalletViewController.h */,
 				1D57F4D11DED31F6008CE38A /* PalletViewController.m */,
 				1D57F4D41DED3572008CE38A /* StampCollectionViewCell.h */,

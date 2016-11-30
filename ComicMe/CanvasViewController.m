@@ -40,7 +40,6 @@
     //   UIPanGestureRecognizer *panny = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
     //   [self.view addGestureRecognizer:panny];
     
-    
     self.imageViewRect = self.imageView.frame;
     
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
@@ -72,15 +71,15 @@
     }
 }
 
--(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *aTouch = [touches anyObject];
-    
-    CGPoint location = [aTouch locationInView:self.imageView];
-    
-    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
-    self.currentImage.center = location;
-    [UIView commitAnimations];
-}
+//-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//    UITouch *aTouch = [touches anyObject];
+//
+//    CGPoint location = [aTouch locationInView:self.imageView];
+//    
+//    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
+//    self.currentImage.center = location;
+//    [UIView commitAnimations];
+//}
 
 
 - (IBAction)panGestureWithBlock:(UIPanGestureRecognizer *)sender {

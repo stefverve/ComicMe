@@ -69,7 +69,7 @@
     }
     if ([segue.identifier isEqualToString:@"addStory"]) {
         CanvasViewController * cvc = segue.destinationViewController;
-        //cvc.currentStory = [self.sm createNewStory];
+        cvc.currentStory = [self.sm createNewStory];
     }
 }
 

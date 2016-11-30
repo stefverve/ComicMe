@@ -32,6 +32,19 @@
     self.collectionView.dataSource = self;
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    
+    pan_block_t panBlock = ^(UIPanGestureRecognizer * sender, CanvasViewController * cvc) {
+        if (sender.state == UIGestureRecognizerStateBegan) {
+            
+        }
+    };
+    
+    [self.delegate setPanBlock:panBlock];
+    [self.delegate setPinchBlock:nil];
+    [self.delegate setRotationBlock:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

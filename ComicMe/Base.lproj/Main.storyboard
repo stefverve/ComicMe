@@ -119,6 +119,8 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="0kg-OO-Y8Y" appends="YES" id="FV0-sY-g7O"/>
+                                    <outletCollection property="gestureRecognizers" destination="1jS-D1-TWs" appends="YES" id="npo-oB-t3t"/>
+                                    <outletCollection property="gestureRecognizers" destination="rFN-d2-sF7" appends="YES" id="bq5-Ca-fBp"/>
                                 </connections>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-Jd-NHw">
@@ -163,6 +165,16 @@
                         <action selector="panGestureWithBlock:" destination="d81-L9-T9S" id="vYZ-NK-K9y"/>
                     </connections>
                 </panGestureRecognizer>
+                <pinchGestureRecognizer id="1jS-D1-TWs">
+                    <connections>
+                        <action selector="pinchGestureWithBlock:" destination="d81-L9-T9S" id="Rj9-zo-FP1"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="rFN-d2-sF7">
+                    <connections>
+                        <action selector="rotationGestureWithBlock:" destination="d81-L9-T9S" id="QSv-MK-Zl4"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1823" y="39"/>
         </scene>

@@ -7,16 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TabViewProtocols.h"
 @class PalletViewController;
 
-@protocol PalletViewDelegate <NSObject>
 
-- (void) addStickerView:(UIImageView *)imageView;
-
-@end
 
 @interface PalletViewController : UIViewController
 
-@property (weak, nonatomic) id<PalletViewDelegate> delegate;
+@property (weak, nonatomic) id<PalletViewDelegate, TabViewDelegate> delegate;
 
 @end

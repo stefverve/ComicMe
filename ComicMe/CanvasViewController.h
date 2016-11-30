@@ -14,13 +14,15 @@
 #import "TabViewProtocols.h"
 @class Story;
 
-@interface CanvasViewController : ViewController <PalletViewDelegate, DrawViewDelegate>
+@interface CanvasViewController : ViewController <PalletViewDelegate, DrawViewDelegate, TabViewDelegate>
 
 
 @property CGRect imageViewRect;
 @property (nonatomic) BOOL hidePreviewButton;
 @property (nonatomic) Story * currentStory;
 @property (nonatomic, copy) pan_block_t panBlock;
+@property (nonatomic, copy) pinch_block_t pinchBlock;
+@property (nonatomic, copy) rotation_block_t rotationBlock;
 
 
 - (void) addStickerView:(UIImageView *)imageView;

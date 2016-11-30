@@ -13,6 +13,6 @@
 
 @interface DrawViewController : UIViewController
 
-@property (weak, nonatomic) id<DrawViewDelegate> delegate;
+@property (weak, nonatomic) id<DrawViewDelegate, TabViewDelegate> delegate;
 
 @end

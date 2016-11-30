@@ -22,7 +22,7 @@
 @property (strong, nonatomic) PaintView * currentPaintView;
 @property (weak, nonatomic) StoryManager * sm;
 @property (nonatomic) UITabBarController * tabBarController;
-@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
+
 
 @end
 
@@ -35,8 +35,8 @@
         self.hidePreviewButton = NO;
     }
     self.sm = [StoryManager sharedManager];
-    UIPinchGestureRecognizer *pinchy = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerPinch:)];
-    [self.view addGestureRecognizer:pinchy];
+//    UIPinchGestureRecognizer *pinchy = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerPinch:)];
+//    [self.view addGestureRecognizer:pinchy];
     //   UIPanGestureRecognizer *panny = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
     //   [self.view addGestureRecognizer:panny];
     
@@ -86,6 +86,13 @@
     self.panBlock(sender, self);
 }
 
+- (IBAction)pinchGestureWithBlock:(UIPinchGestureRecognizer *)sender {
+    self.pinchBlock(sender, self);
+}
+
+- (IBAction)rotationGestureWithBlock:(UIRotationGestureRecognizer *)sender {
+    self.rotationBlock(sender, self);
+}
 
 - (void) addStickerView:(UIImageView *)imageView {
     

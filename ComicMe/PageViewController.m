@@ -13,6 +13,7 @@
 @interface PageViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) StoryManager * sm;
+@property (nonatomic) NSOrderedSet * pageSet;
 @end
 
 @implementation PageViewController
@@ -20,8 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.sm = [StoryManager sharedManager];
-    NSNotificationCenter * noticeCenter = [NSNotificationCenter defaultCenter];
-    [noticeCenter addObserver:self selector:@selector(reloadCollection) name:@"changesToPageImage" object:nil];
+    UICollectionViewFlowLayout * layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+    self.pageSet = self.sm.currentStory.images;
+    
+    //Cell Spacing
+    layout.sectionInset = UIEdgeInsetsMake(0,0,0,0);
+    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 0;
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -35,18 +42,36 @@
 
 #pragma mark - Collection View Data Source
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSOrderedSet * pages = self.sm.currentStory.images;
-    return pages.count;
+    NSInteger numOfItem = self.pageSet.count + 1;
+    return numOfItem;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PageCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.imageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:indexPath.row];
+    if (indexPath.row < self.pageSet.count) {
+     cell.imageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:indexPath.row];
+    }
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row >= self.pageSet.count) {
+        [self.sm addNewImage];
+        [self.collectionView reloadData];
+    }else{
+        [self.sm changeCurrentImage: indexPath.row];
+        [self.delegate updateCurrentImage];
+    }
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(self.collectionView.frame.size.height, self.collectionView.frame.size.height);
+    CGSize newSize;
+    if (indexPath.row < self.pageSet.count) {
+        newSize = CGSizeMake(self.collectionView.frame.size.width * 0.40, self.collectionView.frame.size.height);
+    }else {
+        newSize = CGSizeMake(self.collectionView.frame.size.width * 0.2, self.collectionView.frame.size.height);
+    }
+    return newSize;
 }
 
 - (void) reloadCollection {

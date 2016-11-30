@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @protocol PagesViewDelegate <NSObject>
-
+- (void) updateCurrentImage;
 @end
 @interface PageViewController : UIViewController
 @property (weak, nonatomic) id<PagesViewDelegate> delegate;

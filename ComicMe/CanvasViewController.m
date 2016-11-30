@@ -36,8 +36,8 @@
     self.sm = [StoryManager sharedManager];
     UIPinchGestureRecognizer *pinchy = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerPinch:)];
     [self.view addGestureRecognizer:pinchy];
- //   UIPanGestureRecognizer *panny = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
- //   [self.view addGestureRecognizer:panny];
+    //   UIPanGestureRecognizer *panny = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    //   [self.view addGestureRecognizer:panny];
     
     
     self.imageViewRect = self.imageView.frame;
@@ -71,7 +71,7 @@
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *aTouch = [touches anyObject];
-
+    
     CGPoint location = [aTouch locationInView:self.imageView];
     
     [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
@@ -117,15 +117,13 @@
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo {
     self.imageView.image = image;
+    self.imageView.userInteractionEnabled = YES;
     [self.sm setUIImage:image];
     
     //Update Page Panel
     NSArray * controllers = self.tabBarController.viewControllers;
     PageViewController * pagesController = [controllers firstObject];
     [pagesController reloadCollection];
-    
-    self.cameraButton.hidden = YES;
-    self.cameraRollButton.hidden = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -133,7 +131,13 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
-#pragma mark - NSNotification
-
+#pragma mark - Pages View Controller Delegate
+-(void) updateCurrentImage {
+    UIImage * image = [self.sm getCurrentUIImage:self.sm.currentImage];
+    self.imageView.image = image;
+    if (image == nil) {
+        self.imageView.userInteractionEnabled = NO;
+    }
+}
 
 @end

@@ -50,7 +50,8 @@
     self.currentStory.timestamp = [NSDate date];
     //Create new image
     self.currentImage = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:self.context];
-    NSOrderedSet *imageSet = [NSOrderedSet orderedSetWithArray:@[self.currentImage]];
+    Image * secondImage = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:self.context];
+    NSOrderedSet *imageSet = [NSOrderedSet orderedSetWithArray:@[self.currentImage, secondImage]];
     self.currentStory.images = imageSet;
     [self saveCoreData];
 }
@@ -77,6 +78,23 @@
     Image * image = story.images[index];
     UIImage * compiledImage = [UIImage imageWithData:image.baseImage];
     return compiledImage;
+}
+
+-(UIImage*) getCurrentUIImage: (Image *) image {
+    UIImage * compiledImage = [UIImage imageWithData:image.baseImage];
+    return compiledImage;
+}
+
+-(void) addNewImage {
+    Image * newImage = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:self.context];
+    NSMutableSet * set = (self.currentStory.images).copy;
+    [set addObject:newImage];
+    self.currentStory.images = [NSOrderedSet orderedSetWithSet: set];
+    [self saveCoreData];
+}
+
+-(void) changeCurrentImage: (NSInteger) index {
+    self.currentImage = self.currentStory.images[index];
 }
 
 #pragma mark - Layer Methods

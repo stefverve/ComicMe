@@ -21,5 +21,6 @@
 
 - (void) addStickerView:(UIImageView *)imageView;
 - (void) addDrawView:(PaintView *)paintView;
+- (void) updateCurrentImage;
 
 @end

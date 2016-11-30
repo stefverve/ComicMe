@@ -22,8 +22,12 @@
 + (id) sharedManager;
 
 //Image Methods
+-(void) addNewImage;
 -(void) setUIImage: (UIImage *) image;
 -(UIImage*) getUIImageForStory:(Story*) story  page: (NSInteger) index;
+-(UIImage*) getCurrentUIImage: (Image *) image;
+-(void) changeCurrentImage: (NSInteger) index;
+
 
 //Story Methods
 - (void) createNewStory;

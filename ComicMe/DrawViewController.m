@@ -8,7 +8,7 @@
 
 #import "DrawViewController.h"
 #import "FingerPaintGesture.h"
-#import "CanvasViewController.h"
+
 
 @interface DrawViewController ()
 
@@ -47,7 +47,7 @@
     
     [self.delegate addDrawView:self.paintView];
     
-    
+
     
     
     self.currentColour = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
@@ -65,6 +65,27 @@
         [self prefersStatusBarHidden];
         [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    void (^panBlock)(UIPanGestureRecognizer * sender, CanvasViewController * cvc) = ^(UIPanGestureRecognizer * sender, CanvasViewController * cvc) {
+        if (sender.state == UIGestureRecognizerStateBegan) {
+            if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+                UIGraphicsBeginImageContextWithOptions(self.paintView.frame.size, NO, [UIScreen mainScreen].scale);
+            } else {
+                UIGraphicsBeginImageContext(self.paintView.frame.size);
+            }
+            [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
+            self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            [self.paintView.gestureCollection addObject:[FingerPaintGesture new]];
+            self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushColour = self.currentColour;
+            self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushSize = self.currentBrushSize;
+        }
+        [self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].gestureArray addObject:[NSValue valueWithCGPoint:[sender locationInView:self.paintView]]];
+        [self.paintView setNeedsDisplay];
+    };
+    [self.delegate setPanBlock:panBlock];
 }
 
 - (BOOL)prefersStatusBarHidden {

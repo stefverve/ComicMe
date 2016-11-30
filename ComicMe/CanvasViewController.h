@@ -10,6 +10,7 @@
 #import "PalletViewController.h"
 #import "DrawViewController.h"
 #import "PaintView.h"
+#import "TabViewProtocols.h"
 @class Story;
 
 @interface CanvasViewController : ViewController <PalletViewDelegate, DrawViewDelegate>
@@ -18,6 +19,8 @@
 @property CGRect imageViewRect;
 @property (nonatomic) BOOL hidePreviewButton;
 @property (nonatomic) Story * currentStory;
+@property (nonatomic, copy) pan_block_t panBlock;
+
 
 - (void) addStickerView:(UIImageView *)imageView;
 - (void) addDrawView:(PaintView *)paintView;

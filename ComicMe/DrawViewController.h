@@ -8,13 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PaintView.h"
-@class DrawViewController;
-
-@protocol DrawViewDelegate <NSObject>
-
-- (void) addDrawView:(PaintView *)paintView;
-
-@end
+#import "CanvasViewController.h"
+#import "TabViewProtocols.h"
 
 @interface DrawViewController : UIViewController
 

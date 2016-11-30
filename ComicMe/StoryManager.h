@@ -19,6 +19,8 @@
 @property (nonatomic, strong) Story * currentStory;
 @property (nonatomic, strong) Image * currentImage;
 
++ (id) sharedManager;
+
 //Image Methods
 -(void) setUIImage: (UIImage *) image;
 -(UIImage*) getUIImage: (NSInteger) index;
@@ -27,7 +29,9 @@
 - (void) createNewStory;
 - (void) getStoryCollection;
 
-+ (id) sharedManager;
-- (Layer *) createNewLayer;
+//Layer Methods
+- (void) createNewLayer;
+
+
 
 @end

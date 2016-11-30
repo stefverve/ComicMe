@@ -17,7 +17,7 @@
 @end
 
 @implementation StoryManager
-//r@synthesize stories;
+//@synthesize stories;
 
 #pragma mark - Singleton Methods
 + (id)sharedManager {
@@ -36,15 +36,7 @@
     return self;
 }
 
-#pragma mark - Core Data Handling
-- (Layer*) createNewLayer {
-    NSEntityDescription *layerEntity = [NSEntityDescription entityForName:@"Layer" inManagedObjectContext:self.context];
-    self.currentLayer = [[Layer alloc] initWithEntity:layerEntity insertIntoManagedObjectContext:self.context];
-    NSMutableSet *layers = [self.currentImage valueForKey:@"layers"];
-    [layers addObject:self.currentLayer];
-    return self.currentLayer;
-}
-
+#pragma mark - Core Data
 -(void) saveCoreData {
     NSError * error = nil;
     [self.context save:&error];
@@ -88,4 +80,11 @@
     return compiledImage;
 }
 
+#pragma mark - Layer Methods
+- (void) createNewLayer {
+    Layer * newLayer = [NSEntityDescription insertNewObjectForEntityForName:@"Layer" inManagedObjectContext:self.context];
+    NSOrderedSet *layerSet = [NSOrderedSet orderedSetWithArray:@[newLayer]];
+    self.currentImage.layers = layerSet;
+    [self saveCoreData];
+}
 @end

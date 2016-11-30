@@ -73,9 +73,8 @@
     [self saveCoreData];
 }
 
--(UIImage*) getUIImage: (NSInteger) index {
-    Story * story = self.storyCollection[index];
-    Image * image = story.images[0];
+-(UIImage*) getUIImageForStory:(Story*) story  page: (NSInteger) index {
+    Image * image = story.images[index];
     UIImage * compiledImage = [UIImage imageWithData:image.baseImage];
     return compiledImage;
 }

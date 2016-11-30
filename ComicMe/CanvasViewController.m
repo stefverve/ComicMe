@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *cameraRollButton;
 @property (strong, nonatomic) UIImageView * currentImage;
 @property (strong, nonatomic) PaintView * currentPaintView;
-
 @property (weak, nonatomic) StoryManager * sm;
 
 @end
@@ -118,6 +117,11 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo {
     self.imageView.image = image;
     [self.sm setUIImage:image];
+    
+    //Notification to update pages
+    NSNotification * notice = [NSNotification notificationWithName:@"changesToPageImage" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:notice];
+    
     self.cameraButton.hidden = YES;
     self.cameraRollButton.hidden = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];
@@ -126,5 +130,8 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
+
+#pragma mark - NSNotification
+
 
 @end

@@ -23,7 +23,7 @@
 
 //Image Methods
 -(void) setUIImage: (UIImage *) image;
--(UIImage*) getUIImage: (NSInteger) index;
+-(UIImage*) getUIImageForStory:(Story*) story  page: (NSInteger) index;
 
 //Story Methods
 - (void) createNewStory;

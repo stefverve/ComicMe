@@ -48,7 +48,8 @@
 
 - (StoryCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     StoryCollectionViewCell * cell = [self.storyCollectionView dequeueReusableCellWithReuseIdentifier:@"myCell" forIndexPath:indexPath];
-    UIImage * currentImage = [self.sm getUIImage:indexPath.row];
+    Story * story = self.sm.storyCollection[indexPath.row];
+    UIImage * currentImage = [self.sm getUIImageForStory:story page:0];
     cell.storyImageView.image = currentImage;
     return cell;
 }

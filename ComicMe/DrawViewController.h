@@ -12,14 +12,12 @@
 
 @protocol DrawViewDelegate <NSObject>
 
-- (void) addDrawView:(DrawViewController *)drawViewController;
+- (void) addDrawView:(PaintView *)paintView;
 
 @end
 
 @interface DrawViewController : UIViewController
 
 @property (weak, nonatomic) id<DrawViewDelegate> delegate;
-
-- (void) attachDrawView:(PaintView *)paintView;
 
 @end

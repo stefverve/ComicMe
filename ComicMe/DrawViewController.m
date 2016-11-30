@@ -39,23 +39,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.delegate = [self.storyboard instantiateViewControllerWithIdentifier:@"CanvasView"];
-    
     PaintView *newPaintView = [PaintView new];
-    newPaintView.frame = CGRectMake(0, 0, 414, 414);
     
     self.paintView = newPaintView;
-    UIPanGestureRecognizer *panny = [UIPanGestureRecognizer new];
-    [panny addTarget:self action:@selector(drawInPaintView:)];
-    [self.paintView addGestureRecognizer:panny];
+    
     self.paintView.backgroundColor = [UIColor blackColor];
     
+    [self.delegate addDrawView:self.paintView];
     
-//    [self.delegate addDrawView:self];
-//    self.paintView = [PaintView new];
-//    newPaintView.frame = self.cvc.imageViewRect;
-//    
-//    [self.cvc addSubview:newPaintView];
+    
+    
     
     self.currentColour = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
     self.currentBrushSize = 25;
@@ -123,11 +116,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) attachDrawView:(PaintView *)paintView {
-//    self.paintView = paintView;
-//    UIPanGestureRecognizer *panny = [UIPanGestureRecognizer new];
-//    [panny addTarget:self action:@selector(drawInPaintView:)];
-//    [self.paintView addGestureRecognizer:panny];
-}
+
 
 @end

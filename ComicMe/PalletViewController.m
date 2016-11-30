@@ -58,16 +58,12 @@
     return 0; // This is the minimum inter item spacing, can be more
 }
 
-//- (IBAction)newStickerTapped:(UITapGestureRecognizer *)sender {
-//    
-//    NSIndexPath * indexPath = [self.collectionView indexPathForItemAtPoint:[sender locationInView:self.collectionView]];
-//    StampCollectionViewCell *cell = (StampCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
-//    [self.delegate addStickerView:cell.imageView.image];
-//}
 
+// new sticker selected
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     StampCollectionViewCell *cell = (StampCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
-        [self.delegate addStickerView:cell.imageView.image];
+    UIImageView *newImage = [[UIImageView alloc] initWithImage:cell.imageView.image];
+    [self.delegate addStickerView:newImage];
 }
 
 

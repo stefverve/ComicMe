@@ -68,7 +68,6 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    //[self.sm updateCurrentLayer:self.delegate.];
     if (indexPath.row >= self.sm.imageCollection.count) {
         [self.sm addNewImage];
         [self.collectionView reloadData];

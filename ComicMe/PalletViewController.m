@@ -9,6 +9,7 @@
 #import "PalletViewController.h"
 #import "StampCollectionViewCell.h"
 #import "CanvasViewController.h"
+#import "StoryManager.h"
 
 @interface PalletViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -63,6 +64,10 @@
     [self.delegate setRotationBlock:rotationBlock];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.delegate updateCurrentLayer];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -93,9 +98,6 @@
 
 // new sticker selected
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
- 
-        [self.delegate saveSticker];
-
     StampCollectionViewCell *cell = (StampCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     UIImageView *newImage = [[UIImageView alloc] initWithImage:cell.imageView.image];
     [self.delegate addStickerView:newImage];

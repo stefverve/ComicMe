@@ -101,8 +101,7 @@
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
-    
-    // ADD NEW LAYER IN CORE DATA
+    [self.sm createNewLayer:imageView];
 }
 
 - (void) addDrawView:(PaintView *)paintView {

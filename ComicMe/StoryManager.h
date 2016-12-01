@@ -35,7 +35,7 @@
 - (void) getStoryCollection;
 
 //Layer Methods
-- (void) createNewLayer;
+- (void) createNewLayer: (UIImageView*) imageView;
 
 
 

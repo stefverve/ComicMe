@@ -33,5 +33,7 @@
 - (void) addDrawView:(PaintView *)paintView;
 - (void) addCustomImage:(UIImageView *)imageView;
 - (void) updateCurrentImage;
+- (void) clearCanvas;
+- (void) importLayers;
 
 @end

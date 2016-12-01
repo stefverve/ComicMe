@@ -74,6 +74,9 @@
     }else{
         [self.sm changeCurrentImage: indexPath.row];
         [self.delegate updateCurrentImage];
+        [self.delegate clearCanvas];
+        [self.delegate importLayers];
+        
     }
 }
 

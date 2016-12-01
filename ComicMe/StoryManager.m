@@ -123,4 +123,13 @@
     self.currentImage.layers = set;
     [self saveCoreData];
 }
+-(UIImage*) getUIImageForLayer: (Layer *) layer {
+    UIImage * compiledImage = [UIImage imageWithData:layer.layerImage];
+    return compiledImage;
+}
+
+-(CGRect) createCGRectForLayer: (Layer*) layer {
+    CGRect rect = CGRectMake(layer.x, layer.y, layer.width, layer.height);
+    return rect;
+}
 @end

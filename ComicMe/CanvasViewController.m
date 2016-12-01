@@ -34,7 +34,7 @@
     self.sm = [StoryManager sharedManager];
     
     self.imageViewRect = self.imageView.frame;
-
+    
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 
@@ -89,23 +89,14 @@
 }
 
 - (void) addStickerView:(UIImageView *)imageView {
+    [self updateCurrentLayer];
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
-    
-    // CORE DATA REQUEST TO ADD NEW LAYER  -- OR MAYBE NOT
-}
-
-- (void) saveSticker {
- 
-    // THEN, SAVE ALL STICKER DATA HERE    [self.sm createNewLayer:imageView];
-    if (self.currentImage != nil) {
-        
-    }
+    [self.sm createNewLayer:imageView];
 }
 
 - (void) addCustomImage:(UIImageView *)imageView {
-    [self.sm updateCurrentLayer:self.currentImage];
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
@@ -168,6 +159,10 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void) updateCurrentLayer {
+    [self.sm updateCurrentLayer:self.currentImage];
 }
 
 #pragma mark - Pages View Controller Delegate

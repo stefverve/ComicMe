@@ -86,8 +86,6 @@
 				E276BCCB1DEF5ED800BEE58F /* TabViewProtocols.h */,
 				E24E3C981DECFDF100EAA982 /* CanvasViewController.h */,
 				E24E3C991DECFDF100EAA982 /* CanvasViewController.m */,
-				1D57F4D01DED31F6008CE38A /* PalletViewController.h */,
-				1D57F4D11DED31F6008CE38A /* PalletViewController.m */,
 				1DAC73731DEF3CCD004B93AE /* Pages */,
 				1DCFA38E1DF089930042EDAC /* Stamps */,
 				1DCFA38D1DF089760042EDAC /* Drawing */,
@@ -133,6 +131,8 @@
 		1DCFA38E1DF089930042EDAC /* Stamps */ = {
 			isa = PBXGroup;
 			children = (
+				1D57F4D01DED31F6008CE38A /* PalletViewController.h */,
+				1D57F4D11DED31F6008CE38A /* PalletViewController.m */,
 				1D57F4D41DED3572008CE38A /* StampCollectionViewCell.h */,
 				1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */,
 			);

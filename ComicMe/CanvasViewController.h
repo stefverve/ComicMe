@@ -29,11 +29,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 - (void) addStickerView:(UIImageView *)imageView;
-- (void) saveSticker;
 - (void) addDrawView:(PaintView *)paintView;
 - (void) addCustomImage:(UIImageView *)imageView;
 - (void) updateCurrentImage;
 - (void) clearCanvas;
 - (void) importLayers;
+- (void) updateCurrentLayer;
 
 @end

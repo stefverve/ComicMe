@@ -67,7 +67,6 @@
 - (IBAction)panGestureWithBlock:(UIPanGestureRecognizer *)sender {
     if (self.panBlock) {
         self.panBlock(sender, self);
-        //[self.sm]
     }
 }
 
@@ -90,7 +89,7 @@
 }
 
 - (void) addStickerView:(UIImageView *)imageView {
-    
+    [self.sm updateCurrentLayer:self.currentImage];
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
@@ -108,6 +107,7 @@
 }
 
 - (void) addCustomImage:(UIImageView *)imageView {
+    [self.sm updateCurrentLayer:self.currentImage];
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;

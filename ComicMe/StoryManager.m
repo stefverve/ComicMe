@@ -124,18 +124,20 @@
 }
 
 - (void) updateCurrentLayer: (UIImageView*) imageView{
-    //Get layer ready for core data
-    NSData * convertedImage = UIImagePNGRepresentation(imageView.image);
-    self.currentLayer.layerImage = convertedImage;
-    self.currentLayer.x = imageView.frame.origin.x;
-    self.currentLayer.y = imageView.frame.origin.y;
-    self.currentLayer.width = imageView.frame.size.width;
-    self.currentLayer.height = imageView.frame.size.height;
-    self.currentLayer.transform = NSStringFromCGAffineTransform(imageView.transform);
-    NSMutableOrderedSet * set = (NSMutableOrderedSet *)self.currentImage.layers.mutableCopy;
-    [set addObject:self.currentLayer];
-    self.currentImage.layers = set;
-    [self saveCoreData];
+    if (imageView) {
+        //Get layer ready for core data
+        NSData * convertedImage = UIImagePNGRepresentation(imageView.image);
+        self.currentLayer.layerImage = convertedImage;
+        self.currentLayer.x = imageView.frame.origin.x;
+        self.currentLayer.y = imageView.frame.origin.y;
+        self.currentLayer.width = imageView.frame.size.width;
+        self.currentLayer.height = imageView.frame.size.height;
+        self.currentLayer.transform = NSStringFromCGAffineTransform(imageView.transform);
+        NSMutableOrderedSet * set = (NSMutableOrderedSet *)self.currentImage.layers.mutableCopy;
+        [set addObject:self.currentLayer];
+        self.currentImage.layers = set;
+        [self saveCoreData];
+    }
 }
 
 -(UIImage*) getUIImageForLayer: (Layer *) layer {

@@ -16,8 +16,6 @@
 @property (weak, nonatomic) StoryManager * sm;
 @property (weak, nonatomic) IBOutlet UIView *displayImageBackground;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (nonatomic) NSInteger pageCounter;
-@property (nonatomic) NSInteger pageCount;
 
 @end
 
@@ -25,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.pageCounter = 0;
+    self.pageControl.currentPage = 0;
     // Do any additional setup after loading the view.
     self.sm = [StoryManager sharedManager];
     if (self.hideEditButton) {
@@ -33,15 +31,16 @@
         self.hideEditButton = NO;
     }
     //Setup the story view
-    [self buildImage];
+    [self clearCanvas];
     self.displayViewImageView.layer.borderColor = [UIColor blackColor].CGColor;
     self.displayViewImageView.layer.borderWidth = 4;
-    self.pageCount = self.sm.currentStory.images.count;
-    self.pageControl.numberOfPages = self.pageCount;
+    self.pageControl.numberOfPages = self.sm.currentStory.images.count;
+    self.sm.currentImage = self.sm.currentStory.images[self.pageControl.currentPage];
+    [self buildImage];
 }
 
 - (void) buildImage {
-    self.displayViewImageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:self.pageCounter];
+    self.displayViewImageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:self.pageControl.currentPage];
     
     NSOrderedSet * layers = self.sm.currentImage.layers;
     for (Layer * layer in layers) {
@@ -54,17 +53,16 @@
 }
 
 - (IBAction)comicTapped:(UITapGestureRecognizer *)sender {
-    self.pageCounter = (self.pageCounter + 1) % self.pageCount;
-    self.sm.currentImage = self.sm.currentStory.images[self.pageCounter];
     [UIView animateWithDuration:0.3 animations:^{
         self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, -500, 0);
     }];
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.33 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        self.pageControl.currentPage = (self.pageControl.currentPage + 1) % self.pageControl.numberOfPages;
+        self.sm.currentImage = self.sm.currentStory.images[self.pageControl.currentPage];
         [self clearCanvas];
         [self buildImage];
         self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, +1000, 0);
-        self.pageControl.currentPage = self.pageCounter;
         [UIView animateWithDuration:0.3 animations:^{
             self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, -500, 0);
         }];

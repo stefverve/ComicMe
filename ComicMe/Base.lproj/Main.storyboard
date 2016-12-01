@@ -186,6 +186,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tumblr_n6pmldSHS81t1t5o6o1_1280.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x4q-0a-eSV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qd9-Qg-Ta6">
                                 <rect key="frame" x="10" y="171" width="394" height="394"/>
                                 <subviews>
@@ -211,10 +214,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.78215369724616612" green="1" blue="0.82078787250955632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FcH-Yd-wpP" firstAttribute="top" secondItem="x4q-0a-eSV" secondAttribute="bottom" id="35z-2c-Wq3"/>
                             <constraint firstItem="qd9-Qg-Ta6" firstAttribute="leading" secondItem="YMJ-xr-9Zy" secondAttribute="leading" constant="10" id="UGs-NL-2hF"/>
+                            <constraint firstAttribute="trailing" secondItem="x4q-0a-eSV" secondAttribute="trailing" id="VWW-B3-CYs"/>
+                            <constraint firstItem="x4q-0a-eSV" firstAttribute="leading" secondItem="YMJ-xr-9Zy" secondAttribute="leading" id="eBY-h9-BHj"/>
                             <constraint firstItem="qd9-Qg-Ta6" firstAttribute="centerY" secondItem="YMJ-xr-9Zy" secondAttribute="centerY" id="eCu-oI-ho1"/>
+                            <constraint firstItem="x4q-0a-eSV" firstAttribute="height" secondItem="YMJ-xr-9Zy" secondAttribute="height" id="l6Z-lp-gzU"/>
                             <constraint firstAttribute="trailing" secondItem="qd9-Qg-Ta6" secondAttribute="trailing" constant="10" id="u0I-re-am8"/>
                         </constraints>
                     </view>
@@ -541,6 +548,9 @@
             <point key="canvasLocation" x="3542" y="311"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tumblr_n6pmldSHS81t1t5o6o1_1280.jpg" width="1280" height="1763"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="53t-hG-Cpy"/>
         <segue reference="Fov-E3-Qox"/>

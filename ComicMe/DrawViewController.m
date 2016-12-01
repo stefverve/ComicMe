@@ -103,8 +103,10 @@
     }
     [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
     self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
-    self.paintView = nil;
     [self.delegate addCustomImage:[[UIImageView alloc] initWithImage:self.paintView.currentImage]];
+    [self.paintView removeFromSuperview];
+
+    
 }
 
 - (BOOL)prefersStatusBarHidden {

@@ -32,13 +32,21 @@
     self.displayViewImageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:0];
 }
 
+
+-(void) importLayers {
+    NSOrderedSet * layers = self.sm.currentImage.layers;
+    for (Layer * layer in layers) {
+        UIImage * layerImage = [self.sm getUIImageForLayer:layer];
+        UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
+        layerImageView.frame = [self.sm createCGRectForLayer:layer];
+        [self.imageView addSubview:layerImageView];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-
 #pragma mark - Navigation
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"edit"]) {
         CanvasViewController * cVC = segue.destinationViewController;

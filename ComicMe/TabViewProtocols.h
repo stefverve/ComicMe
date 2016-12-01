@@ -35,6 +35,8 @@ typedef void(^rotation_block_t)(UIRotationGestureRecognizer * sender, CanvasView
 @protocol PagesViewDelegate <NSObject>
 
 - (void) updateCurrentImage;
+- (void) clearCanvas;
+- (void) importLayers;
 
 @end
 

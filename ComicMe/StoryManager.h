@@ -36,7 +36,7 @@
 
 //Layer Methods
 - (void) createNewLayer: (UIImageView*) imageView;
-
-
+-(UIImage*) getUIImageForLayer: (Layer *) layer;
+-(CGRect) createCGRectForLayer: (Layer*) layer;
 
 @end

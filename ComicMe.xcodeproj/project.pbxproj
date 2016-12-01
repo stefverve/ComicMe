@@ -80,20 +80,14 @@
 		1D57F4D31DED3284008CE38A /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				E276BCCB1DEF5ED800BEE58F /* TabViewProtocols.h */,
 				E24E3C981DECFDF100EAA982 /* CanvasViewController.h */,
 				E24E3C991DECFDF100EAA982 /* CanvasViewController.m */,
-				E276BCCB1DEF5ED800BEE58F /* TabViewProtocols.h */,
 				1D57F4D01DED31F6008CE38A /* PalletViewController.h */,
 				1D57F4D11DED31F6008CE38A /* PalletViewController.m */,
-				1D57F4D41DED3572008CE38A /* StampCollectionViewCell.h */,
-				1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */,
-				E2FE44771DEE6FEE00435F7F /* DrawViewController.h */,
-				E2FE44781DEE6FEE00435F7F /* DrawViewController.m */,
-				E2FE447A1DEE70BD00435F7F /* PaintView.h */,
-				E2FE447B1DEE70BD00435F7F /* PaintView.m */,
-				E2FE447D1DEE710000435F7F /* FingerPaintGesture.h */,
-				E2FE447E1DEE710000435F7F /* FingerPaintGesture.m */,
 				1DAC73731DEF3CCD004B93AE /* Pages */,
+				1DCFA38E1DF089930042EDAC /* Stamps */,
+				1DCFA38D1DF089760042EDAC /* Drawing */,
 			);
 			name = Canvas;
 			sourceTree = "<group>";
@@ -120,6 +114,47 @@
 			name = Pages;
 			sourceTree = "<group>";
 		};
+		1DCFA38D1DF089760042EDAC /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				E2FE44771DEE6FEE00435F7F /* DrawViewController.h */,
+				E2FE44781DEE6FEE00435F7F /* DrawViewController.m */,
+				E2FE447A1DEE70BD00435F7F /* PaintView.h */,
+				E2FE447B1DEE70BD00435F7F /* PaintView.m */,
+				E2FE447D1DEE710000435F7F /* FingerPaintGesture.h */,
+				E2FE447E1DEE710000435F7F /* FingerPaintGesture.m */,
+			);
+			name = Drawing;
+			sourceTree = "<group>";
+		};
+		1DCFA38E1DF089930042EDAC /* Stamps */ = {
+			isa = PBXGroup;
+			children = (
+				1D57F4D41DED3572008CE38A /* StampCollectionViewCell.h */,
+				1D57F4D51DED3572008CE38A /* StampCollectionViewCell.m */,
+			);
+			name = Stamps;
+			sourceTree = "<group>";
+		};
+		1DCFA38F1DF089C80042EDAC /* Manager & Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				E24E3C681DECA3DF00EAA982 /* ComicMe.xcdatamodeld */,
+				E24E3C951DECE23900EAA982 /* StoryManager.h */,
+				E24E3C961DECE23900EAA982 /* StoryManager.m */,
+			);
+			name = "Manager & Core Data";
+			sourceTree = "<group>";
+		};
+		1DCFA3901DF08A0C0042EDAC /* Display View */ = {
+			isa = PBXGroup;
+			children = (
+				E24E3C921DECC79A00EAA982 /* DisplayViewController.h */,
+				E24E3C931DECC79A00EAA982 /* DisplayViewController.m */,
+			);
+			name = "Display View";
+			sourceTree = "<group>";
+		};
 		E24E3C501DECA3DF00EAA982 = {
 			isa = PBXGroup;
 			children = (
@@ -139,15 +174,11 @@
 		E24E3C5B1DECA3DF00EAA982 /* ComicMe */ = {
 			isa = PBXGroup;
 			children = (
-				1DCFA38B1DEFA0730042EDAC /* stickers */,
+				E24E3C651DECA3DF00EAA982 /* Main.storyboard */,
 				1D57F52D1DEDF211008CE38A /* Main Collection */,
 				1D57F4D31DED3284008CE38A /* Canvas */,
-				E24E3C951DECE23900EAA982 /* StoryManager.h */,
-				E24E3C961DECE23900EAA982 /* StoryManager.m */,
-				E24E3C921DECC79A00EAA982 /* DisplayViewController.h */,
-				E24E3C931DECC79A00EAA982 /* DisplayViewController.m */,
-				E24E3C651DECA3DF00EAA982 /* Main.storyboard */,
-				E24E3C681DECA3DF00EAA982 /* ComicMe.xcdatamodeld */,
+				1DCFA38F1DF089C80042EDAC /* Manager & Core Data */,
+				1DCFA3901DF08A0C0042EDAC /* Display View */,
 				E24E3C5C1DECA3DF00EAA982 /* Supporting Files */,
 			);
 			path = ComicMe;
@@ -156,6 +187,7 @@
 		E24E3C5C1DECA3DF00EAA982 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DCFA38B1DEFA0730042EDAC /* stickers */,
 				E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */,
 				E24E3C601DECA3DF00EAA982 /* AppDelegate.m */,
 				E24E3C6B1DECA3DF00EAA982 /* Assets.xcassets */,

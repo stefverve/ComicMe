@@ -102,7 +102,7 @@
     // First, find SOME way of correcly redrawing the transformed image into the same (or likely new) UIImageView
     
     // THEN, SAVE ALL STICKER DATA HERE    [self.sm createNewLayer:imageView];
-    
+    [self.sm createNewLayer:self.currentImage];
 }
 
 - (void) addCustomImage:(UIImageView *)imageView {
@@ -149,6 +149,16 @@
 - (void) clearCanvas {
     for (UIImageView * subView in self.imageView.subviews) {
         [subView removeFromSuperview];
+    }
+}
+
+-(void) importLayers {
+    NSOrderedSet * layers = self.sm.currentImage.layers;
+    for (Layer * layer in layers) {
+        UIImage * layerImage = [self.sm getUIImageForLayer:layer];
+        UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
+        layerImageView.frame = [self.sm createCGRectForLayer:layer];
+        [self.imageView addSubview:layerImageView];
     }
 }
 

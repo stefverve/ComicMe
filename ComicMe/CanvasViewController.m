@@ -98,28 +98,9 @@
 }
 
 - (void) saveSticker {
+ 
     
-    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
-        UIGraphicsBeginImageContextWithOptions(self.imageView.frame.size, NO, [UIScreen mainScreen].scale);
-    } else {
-        UIGraphicsBeginImageContext(self.imageView.frame.size);
-    }
-    
-    UIImageView * redrawWithoutTransform = [UIImageView new];
-    redrawWithoutTransform.bounds = self.imageView.bounds;
-    [redrawWithoutTransform setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
-    [self.imageView insertSubview:redrawWithoutTransform belowSubview:self.currentImage];
-    [self.currentImage removeFromSuperview];
-    [redrawWithoutTransform addSubview:self.currentImage];
-    [self.currentImage.layer renderInContext:UIGraphicsGetCurrentContext()];
-    redrawWithoutTransform.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    [self.currentImage removeFromSuperview];
-    
-    
-    
-    
-    // First, find SOME way of correcly redrawing the transformed image into the same (or likely new) UIImageView
+
     
     // THEN, SAVE ALL STICKER DATA HERE    [self.sm createNewLayer:imageView];
     [self.sm createNewLayer:self.currentImage];

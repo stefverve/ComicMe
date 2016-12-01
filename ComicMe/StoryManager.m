@@ -103,10 +103,18 @@
 }
 
 #pragma mark - Layer Methods
-- (void) createNewLayer {
+- (void) createNewLayer: (UIImageView*) imageView{
+    //Get layer ready for core data
     Layer * newLayer = [NSEntityDescription insertNewObjectForEntityForName:@"Layer" inManagedObjectContext:self.context];
-    NSOrderedSet *layerSet = [NSOrderedSet orderedSetWithArray:@[newLayer]];
-    self.currentImage.layers = layerSet;
+    NSData * convertedImage = UIImagePNGRepresentation(imageView.image);
+    newLayer.layerImage = convertedImage;
+    newLayer.x = imageView.frame.origin.x;
+    newLayer.y = imageView.frame.origin.y;
+    newLayer.width = imageView.frame.size.width;
+    newLayer.height = imageView.frame.size.height;
+    
+    NSMutableOrderedSet * set = (NSMutableOrderedSet *)self.currentImage.layers.mutableCopy;
+    self.currentImage.layers = set;
     [self saveCoreData];
 }
 @end

@@ -48,7 +48,7 @@
     if (indexPath.row < self.sm.imageCollection.count) {
         cell.imageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:indexPath.row];
         if (cell.imageView.image == nil) {
-            cell.pageLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+            cell.pageLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row+1];
         }else{
             [cell.pageLabel setHidden:YES];
         }

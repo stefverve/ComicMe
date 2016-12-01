@@ -20,12 +20,12 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-yg-MNo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJ2-8r-Dx0">
                                     <size key="itemSize" width="181" height="159"/>
@@ -91,7 +91,7 @@
                         <viewControllerLayoutGuide type="top" id="XNq-cb-4Fd"/>
                         <viewControllerLayoutGuide type="bottom" id="8ns-sU-gcT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EcX-Fc-dZr">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="EcX-Fc-dZr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -122,7 +122,7 @@
                                 </connections>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-Jd-NHw">
-                                <rect key="frame" x="0.0" y="478" width="414" height="258"/>
+                                <rect key="frame" x="0.0" y="478" width="414" height="194"/>
                                 <connections>
                                     <segue destination="hwJ-7P-xRg" kind="embed" identifier="tabBarSegue" id="xQc-3y-PCa"/>
                                 </connections>
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdF-bd-Vo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879" y="872"/>
+            <point key="canvasLocation" x="1257" y="837"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Maf-Q9-gxT">
@@ -309,6 +309,7 @@
                             <constraint firstItem="nAd-6i-CNh" firstAttribute="centerX" secondItem="dxB-zB-S3f" secondAttribute="centerX" id="zsS-Z3-cfL"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Item 2" id="edu-Jq-f1K"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="258"/>
@@ -402,6 +403,7 @@
                             <constraint firstItem="V7o-gw-84F" firstAttribute="top" secondItem="CsG-02-Tp3" secondAttribute="bottom" id="sfD-yl-3NK"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="hh4-X9-SOl"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="258"/>
@@ -417,6 +419,7 @@
         <scene sceneID="JLW-Xs-RJN">
             <objects>
                 <tabBarController id="hwJ-7P-xRg" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="XRT-l2-3MV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -461,7 +464,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sigh.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Hr-uP-pAY">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Hr-uP-pAY">
                                                     <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
                                                 </imageView>
                                             </subviews>
@@ -489,6 +492,7 @@
                             <constraint firstItem="3UR-gy-8H6" firstAttribute="leading" secondItem="zDn-q3-hSJ" secondAttribute="leading" id="sbp-dZ-b9Y"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="aYi-Xz-zeA"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="258"/>
@@ -501,11 +505,8 @@
             <point key="canvasLocation" x="3542" y="311"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="sigh.png" width="300" height="300"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="53t-hG-Cpy"/>
-        <segue reference="Fov-E3-Qox"/>
+        <segue reference="C5m-jt-p5F"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,6 +25,7 @@
 @property (nonatomic, copy) pinch_block_t pinchBlock;
 @property (nonatomic, copy) rotation_block_t rotationBlock;
 @property (strong, nonatomic) PaintView * currentPaintView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 
 

@@ -36,12 +36,12 @@
 - (void) viewWillAppear:(BOOL)animated {
     
     pan_block_t panBlock = ^(UIPanGestureRecognizer * sender, CanvasViewController * cvc) {
-        NSLog(@"%f",cvc.imageViewRect.size.height);
-        if (sender.state != UIGestureRecognizerStateBegan && CGRectContainsPoint(cvc.imageViewRect, [sender locationOfTouch:0 inView:cvc.view])) {
-            
+        
+//        if ([sender tou inView:<#(nullable UIView *)#>]&& CGRectContainsPoint(cvc.imageViewRect, [sender locationOfTouch:0 inView:cvc.imageView])) {
+//            
      
-            cvc.currentImage.center = [sender locationInView:cvc.view];
-        }
+            cvc.currentImage.center = [sender locationInView:cvc.imageView];
+  //      }
         
     };
     

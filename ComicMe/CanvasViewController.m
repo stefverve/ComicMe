@@ -15,7 +15,7 @@
 @interface CanvasViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewBarButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView; // base image from collection/camera
+//@property (weak, nonatomic) IBOutlet UIImageView *imageView; // base image from collection/camera
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraRollButton;
 @property (weak, nonatomic) StoryManager * sm;

@@ -13,7 +13,6 @@
 #import "AppDelegate.h"
 
 @interface StoryManager ()
-@property (nonatomic, strong) Layer * currentLayer;
 @end
 
 @implementation StoryManager
@@ -110,22 +109,43 @@
 #pragma mark - Layer Methods
 - (void) createNewLayer: (UIImageView*) imageView{
     //Get layer ready for core data
-    Layer * newLayer = [NSEntityDescription insertNewObjectForEntityForName:@"Layer" inManagedObjectContext:self.context];
+    self.currentLayer = [NSEntityDescription insertNewObjectForEntityForName:@"Layer" inManagedObjectContext:self.context];
     NSData * convertedImage = UIImagePNGRepresentation(imageView.image);
-    newLayer.layerImage = convertedImage;
-    newLayer.x = imageView.frame.origin.x;
-    newLayer.y = imageView.frame.origin.y;
-    newLayer.width = imageView.frame.size.width;
-    newLayer.height = imageView.frame.size.height;
-    
+    self.currentLayer.layerImage = convertedImage;
+    self.currentLayer.x = imageView.frame.origin.x;
+    self.currentLayer.y = imageView.frame.origin.y;
+    self.currentLayer.width = imageView.frame.size.width;
+    self.currentLayer.height = imageView.frame.size.height;
+    self.currentLayer.transform = NSStringFromCGAffineTransform(imageView.transform);
     NSMutableOrderedSet * set = (NSMutableOrderedSet *)self.currentImage.layers.mutableCopy;
-    [set addObject:newLayer];
+    [set addObject:self.currentLayer];
     self.currentImage.layers = set;
     [self saveCoreData];
 }
+
+- (void) updateCurrentLayer: (UIImageView*) imageView{
+    //Get layer ready for core data
+    NSData * convertedImage = UIImagePNGRepresentation(imageView.image);
+    self.currentLayer.layerImage = convertedImage;
+    self.currentLayer.x = imageView.frame.origin.x;
+    self.currentLayer.y = imageView.frame.origin.y;
+    self.currentLayer.width = imageView.frame.size.width;
+    self.currentLayer.height = imageView.frame.size.height;
+    self.currentLayer.transform = NSStringFromCGAffineTransform(imageView.transform);
+    NSMutableOrderedSet * set = (NSMutableOrderedSet *)self.currentImage.layers.mutableCopy;
+    [set addObject:self.currentLayer];
+    self.currentImage.layers = set;
+    [self saveCoreData];
+}
+
 -(UIImage*) getUIImageForLayer: (Layer *) layer {
     UIImage * compiledImage = [UIImage imageWithData:layer.layerImage];
     return compiledImage;
+}
+
+-(CGAffineTransform) getTransformForLayer: (Layer*) layer {
+    CGAffineTransform transform = CGAffineTransformFromString(layer.transform);
+    return transform;
 }
 
 -(CGRect) createCGRectForLayer: (Layer*) layer {

@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSOrderedSet <Image*> * imageCollection;
 @property (nonatomic, strong) Story * currentStory;
 @property (nonatomic, strong) Image * currentImage;
+@property (nonatomic, strong) Layer * currentLayer;
 
 + (id) sharedManager;
 
@@ -36,7 +37,9 @@
 
 //Layer Methods
 - (void) createNewLayer: (UIImageView*) imageView;
+- (void) updateCurrentLayer: (UIImageView*) imageView;
 -(UIImage*) getUIImageForLayer: (Layer *) layer;
 -(CGRect) createCGRectForLayer: (Layer*) layer;
+-(CGAffineTransform) getTransformForLayer: (Layer*) layer;
 
 @end

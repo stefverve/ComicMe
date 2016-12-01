@@ -8,6 +8,7 @@
     <entity name="Layer" representedClassName="Layer" syncable="YES" codeGenerationType="class">
         <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="layerImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="transform" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -19,7 +20,7 @@
     </entity>
     <elements>
         <element name="Image" positionX="-245" positionY="90" width="128" height="88"/>
-        <element name="Layer" positionX="-18" positionY="63" width="128" height="135"/>
+        <element name="Layer" positionX="-18" positionY="63" width="128" height="150"/>
         <element name="Story" positionX="-468" positionY="105" width="128" height="73"/>
     </elements>
 </model>

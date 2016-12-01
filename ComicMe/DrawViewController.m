@@ -72,7 +72,7 @@
     
     
     
-    void (^panBlock)(UIPanGestureRecognizer * sender, CanvasViewController * cvc) = ^(UIPanGestureRecognizer * sender, CanvasViewController * cvc) {
+    pan_block_t panBlock = ^(UIPanGestureRecognizer * sender, CanvasViewController * cvc) {
         if (sender.state == UIGestureRecognizerStateBegan) {
             if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
                 UIGraphicsBeginImageContextWithOptions(self.paintView.frame.size, NO, [UIScreen mainScreen].scale);
@@ -91,6 +91,8 @@
         [self.paintView setNeedsDisplay];
     };
     [self.delegate setPanBlock:panBlock];
+    [self.delegate setPinchBlock:nil];
+    [self.delegate setRotationBlock:nil];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -101,8 +103,10 @@
     }
     [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
     self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
-    self.paintView = nil;
     [self.delegate addCustomImage:[[UIImageView alloc] initWithImage:self.paintView.currentImage]];
+    [self.paintView removeFromSuperview];
+
+    
 }
 
 - (BOOL)prefersStatusBarHidden {

@@ -15,14 +15,12 @@
 @interface CanvasViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewBarButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView; // base image from collection/camera
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraRollButton;
-@property (strong, nonatomic) UIImageView * currentImage;
-@property (strong, nonatomic) PaintView * currentPaintView;
 @property (weak, nonatomic) StoryManager * sm;
 @property (nonatomic) UITabBarController * tabBarController;
-@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
+
 
 @end
 
@@ -35,10 +33,6 @@
         self.hidePreviewButton = NO;
     }
     self.sm = [StoryManager sharedManager];
-    UIPinchGestureRecognizer *pinchy = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerPinch:)];
-    [self.view addGestureRecognizer:pinchy];
-    //   UIPanGestureRecognizer *panny = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
-    //   [self.view addGestureRecognizer:panny];
     
     self.imageViewRect = self.imageView.frame;
     
@@ -86,6 +80,13 @@
     self.panBlock(sender, self);
 }
 
+- (IBAction)pinchGestureWithBlock:(UIPinchGestureRecognizer *)sender {
+    self.pinchBlock(sender, self);
+}
+
+- (IBAction)rotationGestureWithBlock:(UIRotationGestureRecognizer *)sender {
+    self.rotationBlock(sender, self);
+}
 
 - (void) addStickerView:(UIImageView *)imageView {
     
@@ -149,6 +150,8 @@
     self.imageView.image = image;
     if (image == nil) {
         self.imageView.userInteractionEnabled = NO;
+    } else {
+        self.imageView.userInteractionEnabled = YES;
     }
 }
 

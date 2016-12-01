@@ -8,6 +8,7 @@
 
 #import "PalletViewController.h"
 #import "StampCollectionViewCell.h"
+#import "CanvasViewController.h"
 
 @interface PalletViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -30,6 +31,23 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    
+    pan_block_t panBlock = ^(UIPanGestureRecognizer * sender, CanvasViewController * cvc) {
+        NSLog(@"%f",cvc.imageViewRect.size.height);
+        if (sender.state != UIGestureRecognizerStateBegan && CGRectContainsPoint(cvc.imageViewRect, [sender locationOfTouch:0 inView:cvc.view])) {
+            
+     
+            cvc.currentImage.center = [sender locationInView:cvc.view];
+        }
+        
+    };
+    
+    [self.delegate setPanBlock:panBlock];
+    [self.delegate setPinchBlock:nil];
+    [self.delegate setRotationBlock:nil];
 }
 
 - (void)didReceiveMemoryWarning {

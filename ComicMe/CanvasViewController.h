@@ -21,6 +21,7 @@
 @property (nonatomic) BOOL hidePreviewButton;
 @property (nonatomic) Story * currentStory;
 @property (strong, nonatomic) UIImageView * currentImage;  // most recently added sticker
+@property (nonatomic, copy) tap_block_t tapBlock;
 @property (nonatomic, copy) pan_block_t panBlock;
 @property (nonatomic, copy) pinch_block_t pinchBlock;
 @property (nonatomic, copy) rotation_block_t rotationBlock;

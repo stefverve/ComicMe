@@ -55,6 +55,11 @@
         }
     };
     
+    tap_block_t tapBlock = ^(UITapGestureRecognizer * sender, CanvasViewController * cvc) {
+        
+    };
+    
+    [self.delegate setTapBlock:tapBlock];
     [self.delegate setPanBlock:panBlock];
     [self.delegate setPinchBlock:pinchBlock];  //  switch these to pass in nil to disable each gesture
     [self.delegate setRotationBlock:rotationBlock];

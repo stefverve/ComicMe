@@ -32,6 +32,7 @@
     [self.delegate setPanBlock:nil];
     [self.delegate setPinchBlock:nil];
     [self.delegate setRotationBlock:nil];
+    [self.delegate setTapBlock:nil];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

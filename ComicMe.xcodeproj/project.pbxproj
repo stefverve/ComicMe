@@ -38,6 +38,7 @@
 		1DAC73751DEF3DA2004B93AE /* PageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageCollectionViewCell.h; sourceTree = "<group>"; };
 		1DAC73761DEF3DA2004B93AE /* PageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCollectionViewCell.m; sourceTree = "<group>"; };
 		1DCFA38B1DEFA0730042EDAC /* stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = stickers; sourceTree = "<group>"; };
+		1DCFA3911DF0A03E0042EDAC /* ComicMe 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ComicMe 2.xcdatamodel"; sourceTree = "<group>"; };
 		E24E3C591DECA3DF00EAA982 /* ComicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24E3C5D1DECA3DF00EAA982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -450,9 +451,10 @@
 		E24E3C681DECA3DF00EAA982 /* ComicMe.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1DCFA3911DF0A03E0042EDAC /* ComicMe 2.xcdatamodel */,
 				E24E3C691DECA3DF00EAA982 /* ComicMe.xcdatamodel */,
 			);
-			currentVersion = E24E3C691DECA3DF00EAA982 /* ComicMe.xcdatamodel */;
+			currentVersion = 1DCFA3911DF0A03E0042EDAC /* ComicMe 2.xcdatamodel */;
 			path = ComicMe.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -67,17 +67,18 @@
 - (IBAction)panGestureWithBlock:(UIPanGestureRecognizer *)sender {
     if (self.panBlock) {
         self.panBlock(sender, self);
+        //[self.sm]
     }
 }
 
 - (IBAction)pinchGestureWithBlock:(UIPinchGestureRecognizer *)sender {
-    if (self.panBlock) {
+    if (self.pinchBlock) {
         self.pinchBlock(sender, self);
     }
 }
 
 - (IBAction)rotationGestureWithBlock:(UIRotationGestureRecognizer *)sender {
-    if (self.panBlock) {
+    if (self.rotationBlock) {
         self.rotationBlock(sender, self);
     }
 }
@@ -159,6 +160,7 @@
         UIImage * layerImage = [self.sm getUIImageForLayer:layer];
         UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
         layerImageView.frame = [self.sm createCGRectForLayer:layer];
+        layerImageView.transform = [self.sm getTransformForLayer:layer];
         [self.imageView addSubview:layerImageView];
     }
 }

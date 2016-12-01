@@ -20,12 +20,12 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-yg-MNo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJ2-8r-Dx0">
                                     <size key="itemSize" width="181" height="159"/>
@@ -91,7 +91,7 @@
                         <viewControllerLayoutGuide type="top" id="XNq-cb-4Fd"/>
                         <viewControllerLayoutGuide type="bottom" id="8ns-sU-gcT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="EcX-Fc-dZr">
+                    <view key="view" contentMode="scaleToFill" id="EcX-Fc-dZr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -124,7 +124,7 @@
                                 </connections>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-Jd-NHw">
-                                <rect key="frame" x="0.0" y="478" width="414" height="194"/>
+                                <rect key="frame" x="0.0" y="478" width="414" height="258"/>
                                 <connections>
                                     <segue destination="hwJ-7P-xRg" kind="embed" identifier="tabBarSegue" id="xQc-3y-PCa"/>
                                 </connections>
@@ -351,12 +351,12 @@
                         <viewControllerLayoutGuide type="top" id="CsG-02-Tp3"/>
                         <viewControllerLayoutGuide type="bottom" id="BZp-PR-iQu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mXd-Ko-kzH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="mXd-Ko-kzH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V7o-gw-84F">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
                                 <color key="backgroundColor" white="0.74641702586206893" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8yr-ub-iie">
                                     <size key="itemSize" width="163" height="183"/>
@@ -366,7 +366,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="irL-MI-WOw" customClass="PageCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="-12" width="163" height="183"/>
+                                        <rect key="frame" x="0.0" y="38" width="163" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="163" height="183"/>
@@ -378,6 +378,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC2-M2-FPn">
                                                     <rect key="frame" x="0.0" y="0.0" width="163" height="183"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -415,7 +416,7 @@
                             <constraint firstItem="V7o-gw-84F" firstAttribute="top" secondItem="CsG-02-Tp3" secondAttribute="bottom" id="sfD-yl-3NK"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="hh4-X9-SOl"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="258"/>

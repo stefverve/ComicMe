@@ -9,8 +9,5 @@
 #import "ViewController.h"
 
 @interface DisplayViewController : ViewController
-
-@property (nonatomic) UIImage * displayImage;
 @property (nonatomic) BOOL hideEditButton;
-
 @end

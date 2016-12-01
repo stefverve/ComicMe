@@ -35,7 +35,7 @@
     self.sm = [StoryManager sharedManager];
     
     self.imageViewRect = self.imageView.frame;
-    
+
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 

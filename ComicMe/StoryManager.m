@@ -17,7 +17,12 @@
 @end
 
 @implementation StoryManager
-//@synthesize stories;
+
+-(void)setCurrentStory:(Story *)currentStory{
+    _currentStory = currentStory;
+    _imageCollection = _currentStory.images;
+}
+
 
 #pragma mark - Singleton Methods
 + (id)sharedManager {

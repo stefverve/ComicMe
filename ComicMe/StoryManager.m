@@ -19,7 +19,6 @@
 
 -(void)setCurrentStory:(Story *)currentStory{
     _currentStory = currentStory;
-    _imageCollection = _currentStory.images;
 }
 
 
@@ -58,7 +57,6 @@
     NSOrderedSet *imageSet = [NSOrderedSet orderedSetWithArray:@[self.currentImage, secondImage]];
     self.currentStory.images = imageSet;
     [self saveCoreData];
-    self.imageCollection = self.currentStory.images;
 }
 
 - (void) getStoryCollection {
@@ -97,7 +95,6 @@
         [set addObject:newImage];
         self.currentStory.images = (NSOrderedSet *)set.copy;
         [self saveCoreData];
-        self.imageCollection = self.currentStory.images;
     }
 
 }

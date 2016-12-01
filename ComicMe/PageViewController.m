@@ -28,6 +28,12 @@
     layout.minimumLineSpacing = 0;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.delegate setPanBlock:nil];
+    [self.delegate setPinchBlock:nil];
+    [self.delegate setRotationBlock:nil];
+}
+
 -(void)viewWillDisappear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

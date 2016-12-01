@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol PagesViewDelegate <NSObject>
-- (void) updateCurrentImage;
-@end
+#import "TabViewProtocols.h"
+
+
 @interface PageViewController : UIViewController
-@property (weak, nonatomic) id<PagesViewDelegate> delegate;
+
+@property (weak, nonatomic) id<PagesViewDelegate, TabViewDelegate> delegate;
 
 - (void) reloadCollection;
+
 @end

@@ -28,6 +28,13 @@ typedef void(^rotation_block_t)(UIRotationGestureRecognizer * sender, CanvasView
 @protocol PalletViewDelegate <NSObject>
 
 - (void) addStickerView:(UIImageView *)imageView;
+- (void) saveSticker;
+
+@end
+
+@protocol PagesViewDelegate <NSObject>
+
+- (void) updateCurrentImage;
 
 @end
 

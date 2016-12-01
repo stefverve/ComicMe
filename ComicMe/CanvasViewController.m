@@ -15,7 +15,6 @@
 @interface CanvasViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewBarButton;
-//@property (weak, nonatomic) IBOutlet UIImageView *imageView; // base image from collection/camera
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraRollButton;
 @property (weak, nonatomic) StoryManager * sm;
@@ -65,27 +64,22 @@
     }
 }
 
-//-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-//    UITouch *aTouch = [touches anyObject];
-//
-//    CGPoint location = [aTouch locationInView:self.imageView];
-//    
-//    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
-//    self.currentImage.center = location;
-//    [UIView commitAnimations];
-//}
-
-
 - (IBAction)panGestureWithBlock:(UIPanGestureRecognizer *)sender {
-    self.panBlock(sender, self);
+    if (self.panBlock) {
+        self.panBlock(sender, self);
+    }
 }
 
 - (IBAction)pinchGestureWithBlock:(UIPinchGestureRecognizer *)sender {
-    self.pinchBlock(sender, self);
+    if (self.panBlock) {
+        self.pinchBlock(sender, self);
+    }
 }
 
 - (IBAction)rotationGestureWithBlock:(UIRotationGestureRecognizer *)sender {
-    self.rotationBlock(sender, self);
+    if (self.panBlock) {
+        self.rotationBlock(sender, self);
+    }
 }
 
 - (void) addStickerView:(UIImageView *)imageView {
@@ -94,7 +88,21 @@
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
     
-    // CORE DATA REQUEST TO ADD NEW LAYER
+    // CORE DATA REQUEST TO ADD NEW LAYER  -- OR MAYBE NOT
+}
+
+- (void) saveSticker {
+    
+//    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+//        UIGraphicsBeginImageContextWithOptions(self.imageView.frame.size, NO, [UIScreen mainScreen].scale);
+//    } else {
+//        UIGraphicsBeginImageContext(self.imageView.frame.size);
+//    }
+
+    // First, find SOME way of correcly redrawing the transformed image into the same (or likely new) UIImageView
+    
+    // THEN, SAVE ALL STICKER DATA HERE
+    
 }
 
 - (void) addCustomImage:(UIImageView *)imageView {
@@ -105,7 +113,6 @@
 }
 
 - (void) addDrawView:(PaintView *)paintView {
-   // [paintView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     paintView.frame = self.imageView.bounds;
     [self.imageView addSubview:paintView];
 }

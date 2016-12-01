@@ -38,10 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 
-    
-    
     self.currentColour = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
     self.currentBrushSize = 25;
     self.paintView.undo = NO;
@@ -103,10 +100,10 @@
     }
     [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
     self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
-    [self.delegate addCustomImage:[[UIImageView alloc] initWithImage:self.paintView.currentImage]];
+    if (self.paintView.gestureCollection.count > 0) {
+        [self.delegate addCustomImage:[[UIImageView alloc] initWithImage:self.paintView.currentImage]];
+    }
     [self.paintView removeFromSuperview];
-
-    
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -126,24 +123,6 @@
     self.paintColourViewTop.constant = 57.5 - sender.value/2;
     self.paintColourViewTrailing.constant = 47.5 - sender.value/2;
 }
-
-//- (IBAction)drawInPaintView:(UIPanGestureRecognizer *)sender {
-//    if (sender.state == UIGestureRecognizerStateBegan) {
-//        if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
-//            UIGraphicsBeginImageContextWithOptions(self.paintView.frame.size, NO, [UIScreen mainScreen].scale);
-//        } else {
-//            UIGraphicsBeginImageContext(self.paintView.frame.size);
-//        }
-//        [self.paintView.layer renderInContext:UIGraphicsGetCurrentContext()];
-//        self.paintView.currentImage = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//        [self.paintView.gestureCollection addObject:[FingerPaintGesture new]];
-//        self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushColour = self.currentColour;
-//        self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].brushSize = self.currentBrushSize;
-//    }
-//    [self.paintView.gestureCollection[self.paintView.gestureCollection.count-1].gestureArray addObject:[NSValue valueWithCGPoint:[sender locationInView:self.paintView]]];
-//    [self.paintView setNeedsDisplay];
-//}
 
 - (IBAction)undoButtonPressed:(UIButton *)sender {
     self.paintView.undo = YES;

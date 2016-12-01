@@ -12,10 +12,10 @@
 #import "PaintView.h"
 #import "FingerPaintGesture.h"
 #import "TabViewProtocols.h"
+#import "PageViewController.h"
 @class Story;
 
-@interface CanvasViewController : ViewController <PalletViewDelegate, DrawViewDelegate, TabViewDelegate>
-
+@interface CanvasViewController : ViewController <PalletViewDelegate, DrawViewDelegate, TabViewDelegate, PagesViewDelegate>
 
 @property CGRect imageViewRect;
 @property (nonatomic) BOOL hidePreviewButton;
@@ -27,9 +27,8 @@
 @property (strong, nonatomic) PaintView * currentPaintView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
-
-
 - (void) addStickerView:(UIImageView *)imageView;
+- (void) saveSticker;
 - (void) addDrawView:(PaintView *)paintView;
 - (void) addCustomImage:(UIImageView *)imageView;
 - (void) updateCurrentImage;

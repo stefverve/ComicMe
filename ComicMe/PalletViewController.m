@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (nonatomic) NSArray * stickerCollection;
 @property (strong, nonatomic) UIImageView * currentSticker;
+@property (nonatomic) BOOL unsavedSticker;
 
 @end
 
@@ -31,23 +32,39 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.unsavedSticker = NO;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     
     pan_block_t panBlock = ^(UIPanGestureRecognizer * sender, CanvasViewController * cvc) {
-        
-//        if ([sender tou inView:<#(nullable UIView *)#>]&& CGRectContainsPoint(cvc.imageViewRect, [sender locationOfTouch:0 inView:cvc.imageView])) {
-//            
-     
-            cvc.currentImage.center = [sender locationInView:cvc.imageView];
-  //      }
-        
+            CGPoint translation = [sender translationInView:cvc.currentImage];
+            [cvc.currentImage setTransform:CGAffineTransformTranslate(cvc.currentImage.transform, translation.x, translation.y)];
+            [sender setTranslation:CGPointZero inView:cvc.currentImage];
+    };
+    
+    pinch_block_t pinchBlock = ^(UIPinchGestureRecognizer * sender, CanvasViewController * cvc) {
+        [cvc.currentImage setTransform:CGAffineTransformScale(cvc.currentImage.transform, sender.scale, sender.scale)];
+        [sender setScale:1.0];
+    };
+    
+    rotation_block_t rotationBlock = ^(UIRotationGestureRecognizer * sender, CanvasViewController * cvc) {
+        if (sender.state == UIGestureRecognizerStateBegan || sender.state == UIGestureRecognizerStateChanged) {
+            [cvc.currentImage setTransform:CGAffineTransformRotate(cvc.currentImage.transform, sender.rotation)];
+            [sender setRotation:0];
+        }
     };
     
     [self.delegate setPanBlock:panBlock];
-    [self.delegate setPinchBlock:nil];
-    [self.delegate setRotationBlock:nil];
+    [self.delegate setPinchBlock:pinchBlock];  //  switch these to pass in nil to disable each gesture
+    [self.delegate setRotationBlock:rotationBlock];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    if (self.unsavedSticker) {
+        [self.delegate saveSticker];
+        self.unsavedSticker = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,10 +96,15 @@
 
 // new sticker selected
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    if (self.unsavedSticker) {
+        [self.delegate saveSticker];
+    }
     StampCollectionViewCell *cell = (StampCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     UIImageView *newImage = [[UIImageView alloc] initWithImage:cell.imageView.image];
     [self.delegate addStickerView:newImage];
+    self.unsavedSticker = YES;
 }
+
 
 
 #pragma mark - Tab Bar Delegate

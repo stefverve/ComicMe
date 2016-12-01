@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *displayViewImageView;
 @property (weak, nonatomic) StoryManager * sm;
+@property (weak, nonatomic) IBOutlet UIView *displayImageBackground;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (nonatomic) NSInteger pageCounter;
 
 
 @end
@@ -22,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.pageCounter = 0;
     // Do any additional setup after loading the view.
     self.sm = [StoryManager sharedManager];
     if (self.hideEditButton) {
@@ -29,7 +33,8 @@
         self.hideEditButton = NO;
     }
     //Setup the story view
-    self.displayViewImageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:0];
+    self.displayViewImageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:self.pageCounter];
+    
 }
 
 

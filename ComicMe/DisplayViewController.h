@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface DisplayViewController : ViewController
+@interface DisplayViewController : ViewController 
 @property (nonatomic) BOOL hideEditButton;
 @end

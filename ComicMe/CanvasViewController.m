@@ -98,10 +98,10 @@
 //    } else {
 //        UIGraphicsBeginImageContext(self.imageView.frame.size);
 //    }
-
+    
     // First, find SOME way of correcly redrawing the transformed image into the same (or likely new) UIImageView
     
-    // THEN, SAVE ALL STICKER DATA HERE
+    // THEN, SAVE ALL STICKER DATA HERE    [self.sm createNewLayer:imageView];
     
 }
 
@@ -144,6 +144,12 @@
     PageViewController * pagesController = [controllers firstObject];
     [pagesController reloadCollection];
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void) clearCanvas {
+    for (UIImageView * subView in self.imageView.subviews) {
+        [subView removeFromSuperview];
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

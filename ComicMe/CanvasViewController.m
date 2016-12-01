@@ -101,7 +101,6 @@
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
-    NSData * imageConvert = UIImagePNGRepresentation(imageView.image);
     [self.sm createNewLayer:imageView];
 }
 

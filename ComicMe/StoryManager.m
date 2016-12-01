@@ -114,6 +114,7 @@
     newLayer.height = imageView.frame.size.height;
     
     NSMutableOrderedSet * set = (NSMutableOrderedSet *)self.currentImage.layers.mutableCopy;
+    [set addObject:newLayer];
     self.currentImage.layers = set;
     [self saveCoreData];
 }

@@ -10,4 +10,9 @@
 
 @implementation PageCollectionViewCell
 
+- (void) prepareForReuse {
+    self.imageView.image = nil;
+    self.pageLabel.text = @"";
+}
+
 @end

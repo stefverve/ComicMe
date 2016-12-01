@@ -194,6 +194,7 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Plc-An-OrB" firstAttribute="leading" secondItem="qd9-Qg-Ta6" secondAttribute="leading" constant="15" id="H7x-Y1-swz"/>
                                     <constraint firstItem="Plc-An-OrB" firstAttribute="top" secondItem="qd9-Qg-Ta6" secondAttribute="top" constant="15" id="W8O-nN-4Bw"/>
@@ -201,6 +202,9 @@
                                     <constraint firstAttribute="width" secondItem="qd9-Qg-Ta6" secondAttribute="height" multiplier="1:1" id="cts-3c-sEB"/>
                                     <constraint firstAttribute="bottom" secondItem="Plc-An-OrB" secondAttribute="bottom" constant="15" id="stF-6t-uwy"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5SU-4M-kzH" appends="YES" id="eOg-zh-8vC"/>
+                                </connections>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vTu-rS-AwY">
                                 <rect key="frame" x="188" y="573" width="39" height="37"/>
@@ -228,6 +232,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdF-bd-Vo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5SU-4M-kzH">
+                    <connections>
+                        <action selector="comicTapped:" destination="FMd-2z-C6F" id="63W-0J-wJn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1256.521739130435" y="836.41304347826099"/>
         </scene>

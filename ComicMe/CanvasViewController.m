@@ -151,6 +151,7 @@
         UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
         layerImageView.bounds = [self.sm createCGRectForLayer:layer];
         layerImageView.center = self.imageView.center;
+        layerImageView.frame = CGRectOffset(layerImageView.frame, 0, -64);
         layerImageView.transform = [self.sm getTransformForLayer:layer];
         
         [self.imageView addSubview:layerImageView];

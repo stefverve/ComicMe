@@ -40,21 +40,39 @@
 }
 
 - (void) buildImage {
+    CGFloat scaleFactor = self.displayViewImageView.bounds.size.width / [UIScreen mainScreen].bounds.size.width;
     self.displayViewImageView.image = [self.sm getUIImageForStory:self.sm.currentStory page:self.pageControl.currentPage];
-    
     NSOrderedSet * layers = self.sm.currentImage.layers;
     for (Layer * layer in layers) {
         UIImage * layerImage = [self.sm getUIImageForLayer:layer];
         UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
-        layerImageView.frame = [self.sm createCGRectForLayer:layer];
+        layerImageView.bounds = [self.sm createCGRectForLayer:layer];
+        layerImageView.bounds = CGRectMake(layerImageView.bounds.origin.x, layerImageView.bounds.origin.y, layerImageView.bounds.size.width * scaleFactor, layerImageView.bounds.size.height * scaleFactor);
+        layerImageView.center = self.displayViewImageView.center;
+        layerImageView.frame = CGRectOffset(layerImageView.frame, 0, -64);
         layerImageView.transform = [self.sm getTransformForLayer:layer];
+        
         [self.displayViewImageView addSubview:layerImageView];
     }
+    
+//    NSOrderedSet * layers = self.sm.currentImage.layers;
+//    for (Layer * layer in layers) {
+//        UIImage * layerImage = [self.sm getUIImageForLayer:layer];
+//        UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
+//        layerImageView.frame = [self.sm createCGRectForLayer:layer];
+//        layerImageView.transform = [self.sm getTransformForLayer:layer];
+//        [self.displayViewImageView addSubview:layerImageView];
+//    }
 }
 
 - (IBAction)comicTapped:(UITapGestureRecognizer *)sender {
+    int x = arc4random_uniform(3) - 1;
+    int y = arc4random_uniform(3) - 1;
+    if (x == 0 && y == 0) {
+        x++;
+    }
     [UIView animateWithDuration:0.3 animations:^{
-        self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, -500, 0);
+        self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, -500 * x, 800 * y);
     }];
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.33 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -62,9 +80,9 @@
         self.sm.currentImage = self.sm.currentStory.images[self.pageControl.currentPage];
         [self clearCanvas];
         [self buildImage];
-        self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, +1000, 0);
+        self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, 1000 * x, -1600 * y);
         [UIView animateWithDuration:0.3 animations:^{
-            self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, -500, 0);
+            self.displayImageBackground.frame = CGRectOffset(self.displayImageBackground.frame, -500 * x, 800 * y);
         }];
     });
 }

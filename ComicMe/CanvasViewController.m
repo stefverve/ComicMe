@@ -99,11 +99,10 @@
 
 - (void) saveSticker {
  
-    
-
-    
     // THEN, SAVE ALL STICKER DATA HERE    [self.sm createNewLayer:imageView];
-    [self.sm createNewLayer:self.currentImage];
+    if (self.currentImage != nil) {
+        [self.sm createNewLayer:self.currentImage];
+    }
 }
 
 - (void) addCustomImage:(UIImageView *)imageView {

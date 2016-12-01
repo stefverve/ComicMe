@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (nonatomic) NSArray * stickerCollection;
 @property (strong, nonatomic) UIImageView * currentSticker;
-@property (nonatomic) BOOL unsavedSticker;
 
 @end
 
@@ -32,7 +31,6 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.unsavedSticker = NO;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -66,10 +64,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    if (self.unsavedSticker) {
         [self.delegate saveSticker];
-        self.unsavedSticker = NO;
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,13 +96,12 @@
 
 // new sticker selected
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if (self.unsavedSticker) {
+ 
         [self.delegate saveSticker];
-    }
+
     StampCollectionViewCell *cell = (StampCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     UIImageView *newImage = [[UIImageView alloc] initWithImage:cell.imageView.image];
     [self.delegate addStickerView:newImage];
-    self.unsavedSticker = YES;
 }
 
 

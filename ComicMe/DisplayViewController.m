@@ -13,7 +13,7 @@
 @interface DisplayViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *displayViewImageView;
-@property (weak, nonatomic) IBOutlet StoryManager * sm;
+@property (weak, nonatomic) StoryManager * sm;
 
 
 @end
@@ -33,15 +33,15 @@
 }
 
 
--(void) importLayers {
-    NSOrderedSet * layers = self.sm.currentImage.layers;
-    for (Layer * layer in layers) {
-        UIImage * layerImage = [self.sm getUIImageForLayer:layer];
-        UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
-        layerImageView.frame = [self.sm createCGRectForLayer:layer];
-        [self.imageView addSubview:layerImageView];
-    }
-}
+//-(void) importLayers {
+//    NSOrderedSet * layers = self.sm.currentImage.layers;
+//    for (Layer * layer in layers) {
+//        UIImage * layerImage = [self.sm getUIImageForLayer:layer];
+//        UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
+//        layerImageView.frame = [self.sm createCGRectForLayer:layer];
+//        [self.imageView addSubview:layerImageView];
+//    }
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

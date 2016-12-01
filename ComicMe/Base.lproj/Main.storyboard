@@ -186,22 +186,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zK3-dM-29M">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMJ-Ce-Q1n">
-                                        <rect key="frame" x="61" y="119" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                            </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgV-u1-ace">
+                                <rect key="frame" x="0.0" y="161" width="414" height="414"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zK3-dM-29M" firstAttribute="top" secondItem="1E5-fB-IwS" secondAttribute="bottom" id="6dM-lw-iAd"/>
-                            <constraint firstAttribute="trailing" secondItem="zK3-dM-29M" secondAttribute="trailing" id="cfz-vz-FU2"/>
-                            <constraint firstItem="zK3-dM-29M" firstAttribute="leading" secondItem="YMJ-xr-9Zy" secondAttribute="leading" id="ehn-mC-8q6"/>
-                            <constraint firstItem="FcH-Yd-wpP" firstAttribute="top" secondItem="zK3-dM-29M" secondAttribute="bottom" id="kEl-YP-d8p"/>
+                            <constraint firstItem="KgV-u1-ace" firstAttribute="centerY" secondItem="YMJ-xr-9Zy" secondAttribute="centerY" id="9VZ-1O-FYo"/>
+                            <constraint firstItem="KgV-u1-ace" firstAttribute="height" secondItem="YMJ-xr-9Zy" secondAttribute="width" id="R9C-Qm-D8i"/>
+                            <constraint firstItem="KgV-u1-ace" firstAttribute="centerX" secondItem="YMJ-xr-9Zy" secondAttribute="centerX" id="YzL-fF-GEz"/>
+                            <constraint firstItem="KgV-u1-ace" firstAttribute="width" secondItem="YMJ-xr-9Zy" secondAttribute="width" id="eIK-8q-7Me"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OoZ-KM-aRF">
@@ -211,6 +205,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="displayViewImageView" destination="KgV-u1-ace" id="4gT-42-hvB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdF-bd-Vo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

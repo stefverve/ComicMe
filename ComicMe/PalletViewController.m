@@ -63,9 +63,6 @@
     [self.delegate setRotationBlock:rotationBlock];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-        [self.delegate saveSticker];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

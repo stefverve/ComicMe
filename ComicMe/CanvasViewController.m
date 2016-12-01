@@ -67,7 +67,6 @@
 - (IBAction)panGestureWithBlock:(UIPanGestureRecognizer *)sender {
     if (self.panBlock) {
         self.panBlock(sender, self);
-        //[self.sm]
     }
 }
 
@@ -90,7 +89,6 @@
 }
 
 - (void) addStickerView:(UIImageView *)imageView {
-    
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
@@ -102,15 +100,17 @@
  
     // THEN, SAVE ALL STICKER DATA HERE    [self.sm createNewLayer:imageView];
     if (self.currentImage != nil) {
-        [self.sm createNewLayer:self.currentImage];
+        
     }
 }
 
 - (void) addCustomImage:(UIImageView *)imageView {
+    [self.sm updateCurrentLayer:self.currentImage];
     [self.imageView addSubview:imageView];
     [imageView setCenter:CGPointMake(self.imageView.frame.size.width/2, self.imageView.frame.size.width/2)];
     self.currentImage = imageView;
     [self.sm createNewLayer:imageView];
+    
 }
 
 - (void) addDrawView:(PaintView *)paintView {
@@ -158,8 +158,10 @@
     for (Layer * layer in layers) {
         UIImage * layerImage = [self.sm getUIImageForLayer:layer];
         UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
-        layerImageView.frame = [self.sm createCGRectForLayer:layer];
+        layerImageView.bounds = [self.sm createCGRectForLayer:layer];
+        layerImageView.center = self.imageView.center;
         layerImageView.transform = [self.sm getTransformForLayer:layer];
+        
         [self.imageView addSubview:layerImageView];
     }
 }

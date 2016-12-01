@@ -54,12 +54,15 @@
     return cell;
 }
 
+#pragma mark - Collection View Delegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    Story * story = self.sm.storyCollection[indexPath.row];
+    self.sm.currentStory = story;
+}
+
+
 #pragma mark - General Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(StoryCollectionViewCell *)sender {
-    if ([segue.identifier isEqualToString:@"detailView"]) {
-        DisplayViewController * dVC = segue.destinationViewController;
-        dVC.displayImage = sender.storyImageView.image;
-    }
     if ([segue.identifier isEqualToString:@"addStory"]) {
         [self.sm createNewStory];
     }

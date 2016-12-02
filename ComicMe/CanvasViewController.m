@@ -36,6 +36,8 @@
     self.imageViewRect = self.imageView.frame;
     
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -70,6 +72,7 @@
         for (UIViewController* vc in self.tabBarController.viewControllers) {
             [vc setValue:self forKey:@"delegate"];
         }
+        self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
     }
 }
 
@@ -160,7 +163,7 @@
         UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
         layerImageView.bounds = [self.sm createCGRectForLayer:layer];
         layerImageView.center = self.imageView.center;
-        layerImageView.frame = CGRectOffset(layerImageView.frame, 0, -64);
+   //     layerImageView.frame = CGRectOffset(layerImageView.frame, 0, -64);
         layerImageView.transform = [self.sm getTransformForLayer:layer];
         
         [self.imageView addSubview:layerImageView];

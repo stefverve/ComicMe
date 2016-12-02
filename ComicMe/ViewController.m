@@ -31,9 +31,11 @@
     self.storyCollectionView.dataSource = self;
     self.storyCollectionView.delegate = self;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
     UICollectionViewFlowLayout * flowLayout = (UICollectionViewFlowLayout*)self.storyCollectionView.collectionViewLayout;
     
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.title = @"Comic Me";
     //Cell Spacing
     flowLayout.sectionInset = UIEdgeInsetsMake(10,10,10,10);
     flowLayout.minimumInteritemSpacing = 10;

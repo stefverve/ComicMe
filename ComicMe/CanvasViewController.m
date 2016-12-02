@@ -66,6 +66,13 @@
         dVC.hideEditButton = YES;
     } else if ([segue.identifier isEqualToString:@"tabBarSegue"]) {
         self.tabBarController = segue.destinationViewController;
+        [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Pages"];
+        [[self.tabBarController.tabBar.items objectAtIndex:0] setImage:[UIImage imageNamed:@"page.png"]];
+        [[self.tabBarController.tabBar.items objectAtIndex:1] setTitle:@"Stamps"];
+        [[self.tabBarController.tabBar.items objectAtIndex:1] setImage:[UIImage imageNamed:@"stamp.png"]];
+        [[self.tabBarController.tabBar.items objectAtIndex:2] setTitle:@"Paint"];
+        [[self.tabBarController.tabBar.items objectAtIndex:2] setImage:[UIImage imageNamed:@"pencil.png"]];
+        
         for (UIViewController* vc in self.tabBarController.viewControllers) {
             [vc setValue:self forKey:@"delegate"];
         }

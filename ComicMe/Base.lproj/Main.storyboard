@@ -40,7 +40,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="181" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8C-gH-jRw">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8C-gH-jRw">
                                                     <rect key="frame" x="0.0" y="0.0" width="181" height="159"/>
                                                 </imageView>
                                             </subviews>
@@ -94,24 +94,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvZ-un-B2C">
-                                <rect key="frame" x="122" y="125" width="130" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Use Camera"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvZ-un-B2C">
+                                <rect key="frame" x="60" y="221" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ZBj-c7-OSy"/>
+                                    <constraint firstAttribute="width" constant="100" id="hIj-xn-Ikx"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="camera.png"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="d81-L9-T9S" eventType="touchUpInside" id="oSq-lg-fyb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcN-KJ-KWV">
-                                <rect key="frame" x="90" y="191" width="194" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get image from camera roll"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcN-KJ-KWV">
+                                <rect key="frame" x="254" y="221" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Crk-GP-oqF"/>
+                                    <constraint firstAttribute="width" constant="100" id="Sbg-pG-l25"/>
+                                </constraints>
+                                <state key="normal" image="album.png"/>
                                 <connections>
                                     <action selector="selectPhoto:" destination="d81-L9-T9S" eventType="touchUpInside" id="uNo-8M-5mG"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJA-Bk-Ruv">
-                                <rect key="frame" x="0.0" y="20" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="414"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IJA-Bk-Ruv" secondAttribute="height" id="I0J-zp-krM"/>
@@ -123,7 +129,7 @@
                                 </connections>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-Jd-NHw">
-                                <rect key="frame" x="0.0" y="434" width="414" height="302"/>
+                                <rect key="frame" x="0.0" y="478" width="414" height="258"/>
                                 <connections>
                                     <segue destination="hwJ-7P-xRg" kind="embed" identifier="tabBarSegue" id="xQc-3y-PCa"/>
                                 </connections>
@@ -132,7 +138,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="wcN-KJ-KWV" firstAttribute="centerY" secondItem="IJA-Bk-Ruv" secondAttribute="centerY" id="8EL-Ba-zCL"/>
+                            <constraint firstItem="wcN-KJ-KWV" firstAttribute="centerY" secondItem="PvZ-un-B2C" secondAttribute="centerY" id="CV8-S0-Nza"/>
                             <constraint firstItem="8ns-sU-gcT" firstAttribute="top" secondItem="JD3-Jd-NHw" secondAttribute="bottom" id="EB6-8R-MhA"/>
+                            <constraint firstItem="wcN-KJ-KWV" firstAttribute="trailing" secondItem="EcX-Fc-dZr" secondAttribute="trailingMargin" constant="-40" id="IYs-kh-eYh"/>
+                            <constraint firstItem="PvZ-un-B2C" firstAttribute="leading" secondItem="EcX-Fc-dZr" secondAttribute="leadingMargin" constant="40" id="MWE-Mh-Ht5"/>
                             <constraint firstItem="IJA-Bk-Ruv" firstAttribute="width" secondItem="EcX-Fc-dZr" secondAttribute="width" id="P4Z-qX-L6P"/>
                             <constraint firstItem="IJA-Bk-Ruv" firstAttribute="centerX" secondItem="EcX-Fc-dZr" secondAttribute="centerX" id="UIH-RI-3o5"/>
                             <constraint firstAttribute="trailing" secondItem="JD3-Jd-NHw" secondAttribute="trailing" id="eWT-fx-0oh"/>
@@ -172,7 +182,7 @@
                     </connections>
                 </rotationGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1823" y="39"/>
+            <point key="canvasLocation" x="1821.7391304347827" y="38.315217391304351"/>
         </scene>
         <!--Display View Controller-->
         <scene sceneID="HrK-45-eFQ">
@@ -549,10 +559,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tumblr_n6pmldSHS81t1t5o6o1_1280.jpg" width="1280" height="1763"/>
+        <image name="album.png" width="300" height="300"/>
+        <image name="camera.png" width="300" height="300"/>
+        <image name="tumblr_n6pmldSHS81t1t5o6o1_1280.jpg" width="678" height="933"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="53t-hG-Cpy"/>
         <segue reference="Fov-E3-Qox"/>
+        <segue reference="53t-hG-Cpy"/>
     </inferredMetricsTieBreakers>
 </document>

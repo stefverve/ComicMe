@@ -13,6 +13,11 @@
 		1DAC73721DEF39FE004B93AE /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAC73711DEF39FE004B93AE /* PageViewController.m */; };
 		1DAC73771DEF3DA2004B93AE /* PageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAC73761DEF3DA2004B93AE /* PageCollectionViewCell.m */; };
 		1DCFA38C1DEFA0730042EDAC /* stickers in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA38B1DEFA0730042EDAC /* stickers */; };
+		1DCFA3941DF0FDA40042EDAC /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA3921DF0FDA40042EDAC /* album.png */; };
+		1DCFA3951DF0FDA40042EDAC /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA3931DF0FDA40042EDAC /* camera.png */; };
+		1DCFA3991DF106D40042EDAC /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA3961DF106D40042EDAC /* page.png */; };
+		1DCFA39A1DF106D40042EDAC /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA3971DF106D40042EDAC /* pencil.png */; };
+		1DCFA39B1DF106D40042EDAC /* stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA3981DF106D40042EDAC /* stamp.png */; };
 		E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C5D1DECA3DF00EAA982 /* main.m */; };
 		E24E3C611DECA3DF00EAA982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C601DECA3DF00EAA982 /* AppDelegate.m */; };
 		E24E3C641DECA3DF00EAA982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C631DECA3DF00EAA982 /* ViewController.m */; };
@@ -40,6 +45,11 @@
 		1DAC73761DEF3DA2004B93AE /* PageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCollectionViewCell.m; sourceTree = "<group>"; };
 		1DCFA38B1DEFA0730042EDAC /* stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = stickers; sourceTree = "<group>"; };
 		1DCFA3911DF0A03E0042EDAC /* ComicMe 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ComicMe 2.xcdatamodel"; sourceTree = "<group>"; };
+		1DCFA3921DF0FDA40042EDAC /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
+		1DCFA3931DF0FDA40042EDAC /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		1DCFA3961DF106D40042EDAC /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		1DCFA3971DF106D40042EDAC /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		1DCFA3981DF106D40042EDAC /* stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp.png; sourceTree = "<group>"; };
 		E24E3C591DECA3DF00EAA982 /* ComicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24E3C5D1DECA3DF00EAA982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -190,7 +200,12 @@
 		E24E3C5C1DECA3DF00EAA982 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DCFA3921DF0FDA40042EDAC /* album.png */,
+				1DCFA3931DF0FDA40042EDAC /* camera.png */,
 				E276BCCC1DF0C81600BEE58F /* tumblr_n6pmldSHS81t1t5o6o1_1280.jpg */,
+				1DCFA3961DF106D40042EDAC /* page.png */,
+				1DCFA3971DF106D40042EDAC /* pencil.png */,
+				1DCFA3981DF106D40042EDAC /* stamp.png */,
 				1DCFA38B1DEFA0730042EDAC /* stickers */,
 				E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */,
 				E24E3C601DECA3DF00EAA982 /* AppDelegate.m */,
@@ -261,11 +276,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DCFA3991DF106D40042EDAC /* page.png in Resources */,
 				E276BCCD1DF0C81600BEE58F /* tumblr_n6pmldSHS81t1t5o6o1_1280.jpg in Resources */,
+				1DCFA3951DF0FDA40042EDAC /* camera.png in Resources */,
 				1DCFA38C1DEFA0730042EDAC /* stickers in Resources */,
 				E24E3C6F1DECA3DF00EAA982 /* LaunchScreen.storyboard in Resources */,
+				1DCFA39B1DF106D40042EDAC /* stamp.png in Resources */,
 				E24E3C6C1DECA3DF00EAA982 /* Assets.xcassets in Resources */,
+				1DCFA39A1DF106D40042EDAC /* pencil.png in Resources */,
 				E24E3C671DECA3DF00EAA982 /* Main.storyboard in Resources */,
+				1DCFA3941DF0FDA40042EDAC /* album.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

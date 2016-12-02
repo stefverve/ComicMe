@@ -46,16 +46,6 @@
     }
 }
 
-- (void) stickerPinch:(UIPinchGestureRecognizer*)sender {
-    
-    self.currentImage.frame = CGRectMake(self.currentImage.frame.origin.x, self.currentImage.frame.origin.y, 300*sender.scale, 300*sender.scale);
-    
-    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
-    self.currentImage.center = [sender locationInView:self.imageView];
-    [UIView commitAnimations];
-    
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

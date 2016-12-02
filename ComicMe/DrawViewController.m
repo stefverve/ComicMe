@@ -39,8 +39,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentColour = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
-    self.currentBrushSize = 25;
+    self.currentColour = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1];
+    self.currentBrushSize = 10;
     self.paintView.undo = NO;
     self.paintColourView.backgroundColor = self.currentColour;
     self.paintColourView.layer.cornerRadius = self.currentBrushSize/2;

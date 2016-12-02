@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ioA-Py-6pN">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ioA-Py-6pN">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -199,25 +199,37 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tumblr_n6pmldSHS81t1t5o6o1_1280.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x4q-0a-eSV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qd9-Qg-Ta6">
-                                <rect key="frame" x="10" y="171" width="394" height="394"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQy-hD-d7K">
+                                <rect key="frame" x="-25" y="136" width="464" height="464"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Plc-An-OrB">
-                                        <rect key="frame" x="15" y="15" width="364" height="364"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qd9-Qg-Ta6">
+                                        <rect key="frame" x="25" y="25" width="414" height="414"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Plc-An-OrB">
+                                                <rect key="frame" x="4" y="4" width="406" height="406"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="Plc-An-OrB" firstAttribute="leading" secondItem="qd9-Qg-Ta6" secondAttribute="leading" constant="4" id="H7x-Y1-swz"/>
+                                            <constraint firstItem="Plc-An-OrB" firstAttribute="top" secondItem="qd9-Qg-Ta6" secondAttribute="top" constant="4" id="W8O-nN-4Bw"/>
+                                            <constraint firstAttribute="trailing" secondItem="Plc-An-OrB" secondAttribute="trailing" constant="4" id="bVl-dL-8CM"/>
+                                            <constraint firstAttribute="bottom" secondItem="Plc-An-OrB" secondAttribute="bottom" constant="4" id="stF-6t-uwy"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="5SU-4M-kzH" appends="YES" id="eOg-zh-8vC"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="Plc-An-OrB" firstAttribute="leading" secondItem="qd9-Qg-Ta6" secondAttribute="leading" constant="15" id="H7x-Y1-swz"/>
-                                    <constraint firstItem="Plc-An-OrB" firstAttribute="top" secondItem="qd9-Qg-Ta6" secondAttribute="top" constant="15" id="W8O-nN-4Bw"/>
-                                    <constraint firstAttribute="trailing" secondItem="Plc-An-OrB" secondAttribute="trailing" constant="15" id="bVl-dL-8CM"/>
-                                    <constraint firstAttribute="width" secondItem="qd9-Qg-Ta6" secondAttribute="height" multiplier="1:1" id="cts-3c-sEB"/>
-                                    <constraint firstAttribute="bottom" secondItem="Plc-An-OrB" secondAttribute="bottom" constant="15" id="stF-6t-uwy"/>
+                                    <constraint firstAttribute="trailing" secondItem="qd9-Qg-Ta6" secondAttribute="trailing" constant="25" id="Ffv-o5-b1v"/>
+                                    <constraint firstAttribute="width" secondItem="bQy-hD-d7K" secondAttribute="height" multiplier="1:1" id="XYO-Dd-yzP"/>
+                                    <constraint firstItem="qd9-Qg-Ta6" firstAttribute="leading" secondItem="bQy-hD-d7K" secondAttribute="leading" constant="25" id="e1S-xu-ifI"/>
+                                    <constraint firstAttribute="bottom" secondItem="qd9-Qg-Ta6" secondAttribute="bottom" constant="25" id="fJA-Aa-xGR"/>
+                                    <constraint firstItem="qd9-Qg-Ta6" firstAttribute="top" secondItem="bQy-hD-d7K" secondAttribute="top" constant="25" id="uf5-A7-E3k"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="5SU-4M-kzH" appends="YES" id="eOg-zh-8vC"/>
-                                </connections>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vTu-rS-AwY">
                                 <rect key="frame" x="188" y="573" width="39" height="37"/>
@@ -227,12 +239,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FcH-Yd-wpP" firstAttribute="top" secondItem="x4q-0a-eSV" secondAttribute="bottom" id="35z-2c-Wq3"/>
-                            <constraint firstItem="qd9-Qg-Ta6" firstAttribute="leading" secondItem="YMJ-xr-9Zy" secondAttribute="leading" constant="10" id="UGs-NL-2hF"/>
                             <constraint firstAttribute="trailing" secondItem="x4q-0a-eSV" secondAttribute="trailing" id="VWW-B3-CYs"/>
+                            <constraint firstItem="bQy-hD-d7K" firstAttribute="centerY" secondItem="x4q-0a-eSV" secondAttribute="centerY" id="YGZ-2B-wVF"/>
                             <constraint firstItem="x4q-0a-eSV" firstAttribute="leading" secondItem="YMJ-xr-9Zy" secondAttribute="leading" id="eBY-h9-BHj"/>
-                            <constraint firstItem="qd9-Qg-Ta6" firstAttribute="centerY" secondItem="YMJ-xr-9Zy" secondAttribute="centerY" id="eCu-oI-ho1"/>
                             <constraint firstItem="x4q-0a-eSV" firstAttribute="height" secondItem="YMJ-xr-9Zy" secondAttribute="height" id="l6Z-lp-gzU"/>
-                            <constraint firstAttribute="trailing" secondItem="qd9-Qg-Ta6" secondAttribute="trailing" constant="10" id="u0I-re-am8"/>
+                            <constraint firstItem="bQy-hD-d7K" firstAttribute="centerX" secondItem="x4q-0a-eSV" secondAttribute="centerX" id="pRK-bv-Lhu"/>
+                            <constraint firstItem="bQy-hD-d7K" firstAttribute="width" secondItem="x4q-0a-eSV" secondAttribute="width" constant="50" id="sqt-Qj-bbm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OoZ-KM-aRF">
@@ -243,6 +255,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backingView" destination="bQy-hD-d7K" id="gih-uA-xCA"/>
                         <outlet property="displayImageBackground" destination="qd9-Qg-Ta6" id="1Vq-X8-iN6"/>
                         <outlet property="displayViewImageView" destination="Plc-An-OrB" id="bZH-ee-3oz"/>
                         <outlet property="pageControl" destination="vTu-rS-AwY" id="CLT-t8-MJ1"/>
@@ -255,7 +268,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1256.521739130435" y="836.41304347826099"/>
+            <point key="canvasLocation" x="1057" y="836"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Maf-Q9-gxT">
@@ -273,7 +286,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYQ-sl-OBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92" y="123"/>
+            <point key="canvasLocation" x="4" y="80"/>
         </scene>
         <!--Drawing-->
         <scene sceneID="QDQ-f9-HUk">
@@ -458,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayf-7k-gMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542" y="577"/>
+            <point key="canvasLocation" x="3425" y="642"/>
         </scene>
         <!--Pages-->
         <scene sceneID="QKi-hG-UFd">
@@ -632,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTe-Fm-TfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542" y="311"/>
+            <point key="canvasLocation" x="3562" y="248"/>
         </scene>
     </scenes>
     <resources>
@@ -641,7 +654,7 @@
         <image name="tumblr_n6pmldSHS81t1t5o6o1_1280.jpg" width="678" height="933"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="OC3-li-77y"/>
         <segue reference="Fov-E3-Qox"/>
-        <segue reference="53t-hG-Cpy"/>
     </inferredMetricsTieBreakers>
 </document>

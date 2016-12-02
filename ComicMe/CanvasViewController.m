@@ -38,6 +38,14 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    if (self.shouldLoadEditPage) {
+        [self updateCurrentImage];
+        [self clearCanvas];
+        [self importLayers];
+    }
+}
+
 - (void) stickerPinch:(UIPinchGestureRecognizer*)sender {
     
     self.currentImage.frame = CGRectMake(self.currentImage.frame.origin.x, self.currentImage.frame.origin.y, 300*sender.scale, 300*sender.scale);

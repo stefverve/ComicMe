@@ -102,6 +102,8 @@
     if ([segue.identifier isEqualToString:@"edit"]) {
         CanvasViewController * cVC = segue.destinationViewController;
         cVC.hidePreviewButton = YES;
+        cVC.shouldLoadEditPage = YES;
+        
     }
 }
 

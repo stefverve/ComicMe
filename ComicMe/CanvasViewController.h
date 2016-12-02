@@ -27,6 +27,7 @@
 @property (nonatomic, copy) rotation_block_t rotationBlock;
 @property (strong, nonatomic) PaintView * currentPaintView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic) BOOL *shouldLoadEditPage;
 
 - (void) addStickerView:(UIImageView *)imageView;
 - (void) addDrawView:(PaintView *)paintView;

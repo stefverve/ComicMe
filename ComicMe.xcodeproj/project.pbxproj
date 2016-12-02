@@ -18,6 +18,7 @@
 		1DCFA3991DF106D40042EDAC /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA3961DF106D40042EDAC /* page.png */; };
 		1DCFA39A1DF106D40042EDAC /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA3971DF106D40042EDAC /* pencil.png */; };
 		1DCFA39B1DF106D40042EDAC /* stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA3981DF106D40042EDAC /* stamp.png */; };
+		1DCFA39F1DF1E2730042EDAC /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA39E1DF1E2730042EDAC /* launch.jpg */; };
 		E24E3C5E1DECA3DF00EAA982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C5D1DECA3DF00EAA982 /* main.m */; };
 		E24E3C611DECA3DF00EAA982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C601DECA3DF00EAA982 /* AppDelegate.m */; };
 		E24E3C641DECA3DF00EAA982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24E3C631DECA3DF00EAA982 /* ViewController.m */; };
@@ -50,6 +51,7 @@
 		1DCFA3961DF106D40042EDAC /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		1DCFA3971DF106D40042EDAC /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 		1DCFA3981DF106D40042EDAC /* stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp.png; sourceTree = "<group>"; };
+		1DCFA39E1DF1E2730042EDAC /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
 		E24E3C591DECA3DF00EAA982 /* ComicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24E3C5D1DECA3DF00EAA982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				1DCFA3961DF106D40042EDAC /* page.png */,
 				1DCFA3971DF106D40042EDAC /* pencil.png */,
 				1DCFA3981DF106D40042EDAC /* stamp.png */,
+				1DCFA39E1DF1E2730042EDAC /* launch.jpg */,
 				1DCFA38B1DEFA0730042EDAC /* stickers */,
 				E24E3C5F1DECA3DF00EAA982 /* AppDelegate.h */,
 				E24E3C601DECA3DF00EAA982 /* AppDelegate.m */,
@@ -282,6 +285,7 @@
 				1DCFA38C1DEFA0730042EDAC /* stickers in Resources */,
 				E24E3C6F1DECA3DF00EAA982 /* LaunchScreen.storyboard in Resources */,
 				1DCFA39B1DF106D40042EDAC /* stamp.png in Resources */,
+				1DCFA39F1DF1E2730042EDAC /* launch.jpg in Resources */,
 				E24E3C6C1DECA3DF00EAA982 /* Assets.xcassets in Resources */,
 				1DCFA39A1DF106D40042EDAC /* pencil.png in Resources */,
 				E24E3C671DECA3DF00EAA982 /* Main.storyboard in Resources */,

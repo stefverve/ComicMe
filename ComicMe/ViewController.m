@@ -30,14 +30,15 @@
     [self.sm getStoryCollection];
     self.storyCollectionView.dataSource = self;
     self.storyCollectionView.delegate = self;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     UICollectionViewFlowLayout * flowLayout = (UICollectionViewFlowLayout*)self.storyCollectionView.collectionViewLayout;
     
     //Cell Spacing
-    flowLayout.sectionInset = UIEdgeInsetsMake(0,0,0,0);
+    flowLayout.sectionInset = UIEdgeInsetsMake(10,10,10,10);
     flowLayout.minimumInteritemSpacing = 10;
     flowLayout.minimumLineSpacing = 10;
-    flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width/2 - 5, self.view.bounds.size.width/2 - 5);
+    flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width/2 - 15, self.view.bounds.size.width/2 - 15);
 }
 
 - (void)viewWillAppear:(BOOL)animated {

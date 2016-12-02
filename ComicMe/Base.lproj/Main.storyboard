@@ -25,7 +25,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-yg-MNo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.14117647058823529" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJ2-8r-Dx0">
                                     <size key="itemSize" width="181" height="159"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -69,6 +69,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ov3-sj-gQ7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4IS-fR-wji">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="d81-L9-T9S" kind="show" identifier="addStory" id="53t-hG-Cpy"/>
                             </connections>
@@ -153,6 +154,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CDs-C5-dYa">
                         <barButtonItem key="rightBarButtonItem" title="Preview" id="B0J-zG-u3c">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="FMd-2z-C6F" kind="show" identifier="preview" id="Fov-E3-Qox"/>
                             </connections>
@@ -196,8 +198,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tumblr_n6pmldSHS81t1t5o6o1_1280.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x4q-0a-eSV">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x4q-0a-eSV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="1" green="0.14117647058823529" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQy-hD-d7K">
                                 <rect key="frame" x="-25" y="136" width="464" height="464"/>
@@ -249,6 +252,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="OoZ-KM-aRF">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="3Li-bl-mxE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="d81-L9-T9S" kind="show" identifier="edit" id="OC3-li-77y"/>
                             </connections>
@@ -275,9 +279,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ioA-Py-6pN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O3Q-uC-bpF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="O3Q-uC-bpF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.62981805371352784" green="0.1524393934002439" blue="0.0036840298509235158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -301,7 +306,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="iFc-a9-47T">
-                                <rect key="frame" x="93" y="15.666666666666664" width="154" height="31"/>
+                                <rect key="frame" x="93" y="35.666666666666671" width="154" height="31.000000000000014"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="QiP-hu-VUC"/>
                                     <constraint firstAttribute="height" constant="30" id="qyO-K5-0mp"/>
@@ -311,7 +316,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="dxB-zB-S3f">
-                                <rect key="frame" x="93" y="77.666666666666671" width="154" height="31"/>
+                                <rect key="frame" x="93" y="97.666666666666671" width="154" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="I6D-7G-Pgt"/>
                                     <constraint firstAttribute="height" constant="30" id="LVJ-J2-crW"/>
@@ -322,7 +327,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-6i-CNh">
-                                <rect key="frame" x="93" y="108.66666666666666" width="154" height="30.999999999999972"/>
+                                <rect key="frame" x="93" y="128.66666666666666" width="154" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="dXd-sR-lAB"/>
                                     <constraint firstAttribute="height" constant="30" id="sxG-F4-xPO"/>
@@ -333,7 +338,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="75" translatesAutoresizingMaskIntoConstraints="NO" id="GNi-lf-z12">
-                                <rect key="frame" x="93" y="139.66666666666666" width="154" height="31"/>
+                                <rect key="frame" x="93" y="159.66666666666666" width="154" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="FSS-1d-pac"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Pqu-xB-H4w"/>
@@ -344,7 +349,7 @@
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLI-Bn-PBE">
-                                <rect key="frame" x="309" y="30" width="75" height="75"/>
+                                <rect key="frame" x="309" y="50" width="75" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="8Cg-Xi-WbT"/>
@@ -352,7 +357,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfL-ve-pTj">
-                                <rect key="frame" x="328" y="139" width="38" height="30"/>
+                                <rect key="frame" x="328" y="188" width="38" height="30"/>
                                 <state key="normal" title="Undo">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -361,7 +366,7 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="86B-Zj-o1r">
-                                <rect key="frame" x="93" y="46.666666666666671" width="154" height="31.000000000000014"/>
+                                <rect key="frame" x="93" y="66.666666666666671" width="154" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1Dq-SH-LdD"/>
                                     <constraint firstAttribute="width" constant="150" id="Z8m-3M-AUK"/>
@@ -372,7 +377,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjw-uw-ZDn">
-                                <rect key="frame" x="20" y="20" width="55" height="21"/>
+                                <rect key="frame" x="20" y="40" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Czt-SU-15v"/>
                                     <constraint firstAttribute="width" constant="55" id="TXj-Lm-foE"/>
@@ -382,7 +387,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFA-Cz-shl">
-                                <rect key="frame" x="20" y="51" width="55" height="21"/>
+                                <rect key="frame" x="20" y="71" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="M8D-29-YgS"/>
                                     <constraint firstAttribute="height" constant="21" id="mo5-jd-3Ew"/>
@@ -392,7 +397,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1St-WE-vQd">
-                                <rect key="frame" x="20" y="82" width="55" height="21"/>
+                                <rect key="frame" x="20" y="102" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="IY5-H7-5T0"/>
                                     <constraint firstAttribute="width" constant="55" id="KzE-C0-DnH"/>
@@ -402,7 +407,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfd-H9-EY1">
-                                <rect key="frame" x="20" y="113" width="55" height="21"/>
+                                <rect key="frame" x="20" y="133" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="2vq-NG-9pi"/>
                                     <constraint firstAttribute="width" constant="55" id="Cqd-8r-0x8"/>
@@ -412,7 +417,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wZ-1H-4tN">
-                                <rect key="frame" x="20" y="144" width="55" height="21"/>
+                                <rect key="frame" x="20" y="164" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RY9-vH-XiI"/>
                                     <constraint firstAttribute="width" constant="55" id="dWA-zK-7OI"/>
@@ -651,10 +656,9 @@
     <resources>
         <image name="album.png" width="300" height="300"/>
         <image name="camera.png" width="300" height="300"/>
-        <image name="tumblr_n6pmldSHS81t1t5o6o1_1280.jpg" width="678" height="933"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OC3-li-77y"/>
-        <segue reference="Fov-E3-Qox"/>
+        <segue reference="53t-hG-Cpy"/>
+        <segue reference="C5m-jt-p5F"/>
     </inferredMetricsTieBreakers>
 </document>

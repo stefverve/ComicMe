@@ -47,7 +47,7 @@
         UIImage * layerImage = [self.sm getUIImageForLayer:layer];
         UIImageView * layerImageView = [[UIImageView alloc] initWithImage:layerImage];
         layerImageView.bounds = [self.sm createCGRectForLayer:layer];
-        layerImageView.bounds = CGRectMake(layerImageView.bounds.origin.x, layerImageView.bounds.origin.y, layerImageView.bounds.size.width * scaleFactor, layerImageView.bounds.size.height * scaleFactor);
+    layerImageView.bounds = CGRectMake(layerImageView.bounds.origin.x, layerImageView.bounds.origin.y, layerImageView.bounds.size.width * scaleFactor, layerImageView.bounds.size.height * scaleFactor);
         layerImageView.center = self.displayViewImageView.center;
         layerImageView.transform = [self.sm getTransformForLayer:layer];
         [self.displayViewImageView addSubview:layerImageView];

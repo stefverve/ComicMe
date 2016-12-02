@@ -46,6 +46,10 @@
     }
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    self.currentImage = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -54,6 +58,7 @@
     if ([segue.identifier isEqualToString:@"preview"]) {
         DisplayViewController * dVC = segue.destinationViewController;
         dVC.hideEditButton = YES;
+    //    [self updateCurrentLayer];
     } else if ([segue.identifier isEqualToString:@"tabBarSegue"]) {
         self.tabBarController = segue.destinationViewController;
         [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Pages"];

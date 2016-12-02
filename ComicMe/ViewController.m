@@ -30,6 +30,14 @@
     [self.sm getStoryCollection];
     self.storyCollectionView.dataSource = self;
     self.storyCollectionView.delegate = self;
+    
+    UICollectionViewFlowLayout * flowLayout = (UICollectionViewFlowLayout*)self.storyCollectionView.collectionViewLayout;
+    
+    //Cell Spacing
+    flowLayout.sectionInset = UIEdgeInsetsMake(0,0,0,0);
+    flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.minimumLineSpacing = 10;
+    flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width/2 - 5, self.view.bounds.size.width/2 - 5);
 }
 
 - (void)viewWillAppear:(BOOL)animated {

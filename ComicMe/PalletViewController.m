@@ -76,7 +76,7 @@
 
 #pragma mark - Collection View Delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return self.stickerCollection.count;
 }
 
 
